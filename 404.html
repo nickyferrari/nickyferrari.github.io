@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Nicholas Ferrari</title>
+<!-- This page is fully self-contained on purpose: GitHub Pages serves it for
+     ANY missing path, so relative asset links can't be trusted here. -->
+<style>
+  :root { --bg:#FAF9F6; --ink:#1C1E22; --soft:#575D66; --accent:#2B59C3; --cell:#2B59C3; --sunk:#F1EEE7; --linec:#E6E2D7; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14161A; --ink:#E7E5E0; --soft:#A8ACB4; --accent:#8AA7F0; --cell:#8AA7F0; --sunk:#0F1114; --linec:#282C33; }
+  }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         min-height:100vh; display:flex; align-items:center; justify-content:center; }
+  main { text-align:center; padding:32px 20px; max-width:560px; }
+  h1 { font-family:Georgia,"Times New Roman",serif; font-weight:600; font-size:2rem; margin:22px 0 8px; }
+  p { color:var(--soft); margin:0 0 20px; line-height:1.6; }
+  a { color:var(--accent); text-decoration:none; font-weight:500; }
+  a:hover { text-decoration:underline; }
+  canvas { width:100%; max-width:480px; height:auto; background:var(--sunk); border:1px solid var(--linec); border-radius:14px; }
+</style>
+</head>
+<body>
+<main>
+  <canvas id="c" width="480" height="288" aria-label="A small Game of Life simulation, slowly evolving"></canvas>
+  <h1>404 — this page evolved into nothing</h1>
+  <p>Like most random soups in Conway's Game of Life, whatever used to be here has drifted off or died out.</p>
+  <p><a href="/">Return to a stable configuration →</a></p>
+</main>
+<script>
+(function () {
+  var W = 60, H = 36, CELL = 8;
+  var cv = document.getElementById('c'), ctx = cv.getContext('2d');
+  var cur = new Uint8Array(W * H), nxt = new Uint8Array(W * H);
+  for (var i = 0; i < cur.length; i++) cur[i] = Math.random() < 0.28 ? 1 : 0;
+  function step() {
+    for (var y = 0; y < H; y++) for (var x = 0; x < W; x++) {
+      var n = 0;
+      for (var dy = -1; dy <= 1; dy++) for (var dx = -1; dx <= 1; dx++) {
+        if (!dx && !dy) continue;
+        n += cur[((y + dy + H) % H) * W + ((x + dx + W) % W)];
+      }
+      var a = cur[y * W + x];
+      nxt[y * W + x] = a ? (n === 2 || n === 3 ? 1 : 0) : (n === 3 ? 1 : 0);
+    }
+    var t = cur; cur = nxt; nxt = t;
+  }
+  function draw() {
+    var cs = getComputedStyle(document.documentElement);
+    ctx.fillStyle = cs.getPropertyValue('--sunk').trim() || '#F1EEE7';
+    ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.fillStyle = cs.getPropertyValue('--cell').trim() || '#2B59C3';
+    for (var y = 0; y < H; y++) for (var x = 0; x < W; x++)
+      if (cur[y * W + x]) ctx.fillRect(x * CELL + 1, y * CELL + 1, CELL - 2, CELL - 2);
+  }
+  draw();
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(function () { step(); draw(); }, 140);
+  }
+})();
+</script>
+</body>
+</html>

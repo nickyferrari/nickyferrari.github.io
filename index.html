@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicholas Ferrari — Quantitative Plant Biologist</title>
+<meta name="description" content="Nicholas Ferrari studies how the photosynthetic electron transport chain is regulated under dynamic and unpredictable light, combining biophysics, custom instrumentation, and signal processing.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-head">
+  <nav class="nav wrap" aria-label="Main">
+    <a class="brand" href="index.html">Nicholas Ferrari</a>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">About</a>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html">CV</a>
+      <a href="teaching.html">Teaching</a>
+      <a class="play-link" href="play/index.html">Play</a>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <!-- EDIT: swap the placeholder portrait for a photo — save it as
+         assets/me.jpg and change the src below -->
+    <img class="portrait" src="assets/portrait.svg" alt="Portrait of Nicholas Ferrari" width="132" height="132">
+    <div>
+      <h1 class="name">Nicholas Ferrari</h1>
+      <p class="tagline">Quantitative plant biologist. I study how photosynthesis regulates itself when the light won't hold still — combining biophysics, custom instrumentation, and signal processing. Ph.D. in Biochemistry, Louisiana State University, 2026.</p>
+      <div class="quick-links">
+        <a class="pill" href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a>
+        <!-- EDIT: replace with your real profile URLs (or delete the ones you don't use) -->
+        <a class="pill" href="https://scholar.google.com">Google Scholar</a>
+        <a class="pill" href="https://orcid.org">ORCID</a>
+        <a class="pill" href="https://github.com/yourusername">GitHub</a>
+        <a class="pill" href="cv.html">CV</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <p class="section-label">About</p>
+    <p>I completed my Ph.D. in Biochemistry, with a minor in Mathematics, at Louisiana State University, working with <a href="https://www.lsu.edu/science/biosci/">David Vinyard</a>. My dissertation treats the photosynthetic electron transport chain as a control system and asks a question that steady-state measurements can't answer: does it matter whether light fluctuates <em>predictably</em>?</p>
+    <p>It does. Using <em>Chlamydomonas reinhardtii</em> in light environments matched for total photon dose and for Total Variation — so the only remaining difference is whether the next change can be anticipated — I found that the regulatory system acclimates to the <em>quantity</em> of light stress but not to its unpredictability. Mutants lacking individual control mechanisms (qE, cyclic electron flow, Flv-mediated electron transfer, state transitions) each leave a separable signature in that response, and the cost of unpredictability reverses when conditions settle.</p>
+    <p>I got here by way of the RIPE project at the UIUC Institute for Genomic Biology, where I managed transgenic field trials and started asking why an engineered bypass improved biomass without moving the metabolite pools it was designed to move. Looking for a framework that could answer that led me to control theory and to Uri Alon's treatment of biological networks as analyzable circuits — which is still how I approach an experiment. Along the way I build the instruments and the analysis pipelines the questions require, which you can <a href="play/index.html">try out here</a>.</p>
+  </section>
+
+  <section id="research">
+    <p class="section-label">Research interests</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Acclimation to unpredictable light</h3>
+        <p>Photosynthetic organisms in nature never see constant illumination. I design light environments that separate <em>how much</em> light moves from <em>how predictably</em> it moves, and measure what each costs the electron transport chain.</p>
+      </div>
+      <div class="card">
+        <h3>PSII kinetics &amp; signal processing</h3>
+        <p>Flash-induced measurements of Photosystem II mix a period-four donor signal with a period-two acceptor signal. Separating them first — with the Empirical Wavelet Transform — recovers kinetic parameters that direct fitting gets wrong.</p>
+      </div>
+      <div class="card">
+        <h3>Instruments &amp; computational tools</h3>
+        <p>Sub-millisecond LED flash systems on custom PCBs, multicultivators reprogrammed to deliver mathematically defined light, CAD-designed optics, genome-scale ortholog screens, and machine-learning image analysis.</p>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:14px">Two of these are interactive on the <a href="play/index.html">Playground</a>: the light-environment design and the Kok clock.</p>
+  </section>
+
+  <section id="news">
+    <p class="section-label">News</p>
+    <!-- EDIT: keep this short and reverse-chronological. Add your defense date
+         and your next position when you're ready to announce it. -->
+    <ul class="news">
+      <li><time>2026</time><span>Completed my Ph.D. in Biochemistry (minor in Mathematics) at LSU.</span></li>
+      <li><time>2026</time><span>First-author paper out in <em>Plants</em>: separating the parallel cycles of Photosystem II with the Empirical Wavelet Transform.</span></li>
+      <li><time>2026</time><span>Co-authored work on plastid carbonic anhydrases published in <em>Plant Physiology</em>.</span></li>
+      <li><time>Oct 2025</time><span>Talk on algal acclimation to stochastic light at the Midwest/Southeast Photosynthesis Conference.</span></li>
+      <li><time>Jun 2025</time><span>Presented kinetic modeling in dynamic environments at the Gordon Research Conference on CO₂ Assimilation in Plants.</span></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <span>© 2026 Nicholas Ferrari</span>
+    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
+    <span>Hand-built with plain HTML · <a href="https://github.com/yourusername/yourusername.github.io">source</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
