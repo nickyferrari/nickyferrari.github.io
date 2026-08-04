@@ -321,7 +321,7 @@
   function scoreLabel(used) {
     var d = used - level.par;
     if (d < 0) return 'Under par?! A round for the history books.';
-    if (d === 0) return 'Right at par — a perfect round.';
+    if (d === 0) return 'Right at par. A perfect round.';
     if (d === 1) return 'One over par. Solid golf.';
     return d + ' over par — it counts all the same.';
   }

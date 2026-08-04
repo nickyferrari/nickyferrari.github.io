@@ -29,7 +29,7 @@
       goal: { type: 'reach', rect: [46, 13, 51, 22] },
       walls: [],
       budget: 13, par: 9, maxGen: 110,
-      blurb: 'Get any live cell onto the gold green. Nothing that sits still will do it — you need something that <strong>travels</strong>.',
+      blurb: 'Get any live cell onto the gold green. Nothing that sits still will do it. You need something that <strong>travels</strong>.',
       hint: 'A lightweight spaceship (LWSS) flies east at half the speed of light. Place one so its 4-row body lines up with the green, then launch.'
     },
     {
@@ -51,7 +51,7 @@
       goal: { type: 'reach', rect: [46, 11, 51, 18] },
       walls: flat([block(24, 6), block(24, 20), block(24, 34)]),
       budget: 13, par: 9, maxGen: 110,
-      blurb: 'A reef of still-life blocks guards the fairway, and the green only spans the upper lane. Fly through the gap — <strong>without clipping the rocks</strong>.',
+      blurb: 'A reef of still-life blocks guards the fairway, and the green only spans the upper lane. Fly through the gap, <strong>without clipping the rocks</strong>.',
       hint: 'A spaceship\'s wake is taller than it looks: even passing two rows from a rock, the cells in between can spring to life and wreck you. Aim for the dead center of the gap.'
     },
     {
@@ -63,7 +63,7 @@
       walls: block(34, 17),
       budget: 13, par: 9, maxGen: 100,
       blurb: 'A stubborn block squats on the green, and a block left alone lives forever. <strong>Clear every live cell out of the gold zone</strong>, however briefly.',
-      hint: 'Crash a spaceship into it. A dead-center hit scatters debris right back onto the green — the winning lines are slightly off-center, so experiment with your approach row.'
+      hint: 'Crash a spaceship into it. A dead-center hit scatters debris right back onto the green. The winning lines are slightly off-center, so experiment with your approach row.'
     },
     {
       id: 'storm',
@@ -81,7 +81,7 @@
       })(),
       budget: 13, par: 9, maxGen: 130,
       blurb: 'An R-pentomino erupts mid-fairway the moment you launch, and the clock is tight. Thread a ship past the storm <strong>before it swallows the fairway</strong>.',
-      hint: 'The chaos grows outward from the center at a finite speed — a spaceship is faster. Hug the quiet edge of the fairway and go early.'
+      hint: 'The chaos grows outward from the center at a finite speed. A spaceship is faster. Hug the quiet edge of the fairway and go early.'
     }
   ];
 

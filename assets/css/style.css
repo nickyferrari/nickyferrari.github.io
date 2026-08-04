@@ -380,6 +380,24 @@ input[type="checkbox"] { accent-color: var(--accent); width: 15px; height: 15px;
 
 .hidden { display: none !important; }
 
+/* ---------- rule list (numbered list, used on the Life page) ---------- */
+
+.rules-box {
+  background: var(--bg-raise);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 20px 18px;
+  margin-top: 14px;
+  box-shadow: var(--shadow);
+}
+.rules-box h3 { margin: 0 0 4px; }
+.rules-box > p { font-size: .9rem; color: var(--ink-soft); margin: 0 0 10px; }
+
+ol.rules { margin: 0; padding-left: 22px; font-size: .93rem; }
+ol.rules li { margin: 7px 0; padding-left: 4px; }
+ol.rules li::marker { color: var(--accent); font-weight: 600; font-family: var(--mono); font-size: .85em; }
+ol.rules .term { color: var(--ink-faint); font-style: italic; }
+
 /* ---------- charts ---------- */
 
 .legend { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0 0; font-size: .87rem; }

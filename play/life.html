@@ -32,7 +32,7 @@
 
   <div class="page-head">
     <h1>Game of Life lab</h1>
-    <p class="lede">Conway's Game of Life (1970) has just two rules — a dead cell with exactly 3 neighbors is born, a live cell with 2 or 3 survives — yet it contains gliders, guns, and universal computers. Draw on the grid, drop in a famous pattern, or change the rules themselves and watch a different universe unfold. The board starts loaded with a <em>Gosper glider gun</em>: press Run.</p>
+    <p class="lede">Conway's Game of Life (1970) runs on four rules about how many neighbors a cell has, listed in full under the grid. Yet it contains gliders, guns, and universal computers. Draw on the grid, drop in a famous pattern, or change the rules themselves and watch a different universe unfold. The board starts loaded with a <em>Gosper glider gun</em>: press Run.</p>
   </div>
 
   <div class="demo">
@@ -88,7 +88,19 @@
         <span id="l-rule-out">B3/S23</span>
         <span>draw with your mouse</span>
       </div>
-      <p class="stage-note">Cells are tinted by age: bright blue for newborns, fading toward ink as they survive. The gun fires a glider every 30 generations — on a wrapping board its own gliders will eventually come back around and destroy it, which feels like a metaphor for something.</p>
+      <div class="rules-box">
+        <h3>The rules, in full</h3>
+        <p>Every cell looks at its eight neighbors, and all cells update at once:</p>
+        <ol class="rules">
+          <li>A live cell with fewer than two live neighbors dies. <span class="term">(underpopulation)</span></li>
+          <li>A live cell with two or three live neighbors survives to the next generation.</li>
+          <li>A live cell with more than three live neighbors dies. <span class="term">(overpopulation)</span></li>
+          <li>A dead cell with exactly three live neighbors becomes live. <span class="term">(reproduction)</span></li>
+        </ol>
+        <p style="margin:12px 0 0">Rules 2 and 4 are the whole thing: survive on 2 or 3, born on exactly 3. That is what <strong>B3/S23</strong> in the readout means, and it is why the rule editor in the panel only needs two rows of checkboxes. Every variant in the preset menu is the same four rules with different numbers in them.</p>
+      </div>
+
+      <p class="stage-note">Cells are tinted by age: bright blue for newborns, fading toward ink as they survive. The gun fires a glider every 30 generations. On a wrapping board its own gliders will eventually come back around and destroy it, which feels like a metaphor for something.</p>
     </div>
   </div>
 
@@ -98,7 +110,7 @@
   <div class="wrap-wide foot-row">
     <span>© 2026 Nicholas Ferrari</span>
     <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
-    <span>Hand-built with plain HTML · <a href="https://github.com/yourusername/yourusername.github.io">source</a></span>
+    <span>Hand-built with plain HTML · <a href="https://github.com/nickyferrari/nickyferrari.github.io">source</a></span>
   </div>
 </footer>
 
