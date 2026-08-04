@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game of Life lab — Nicholas Ferrari</title>
+<meta name="description" content="Conway's Game of Life and its variants: draw patterns, drop in famous configurations, and edit the birth/survival rules live.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-head">
+  <nav class="nav wrap-wide" aria-label="Main">
+    <a class="brand" href="../index.html">Nicholas Ferrari</a>
+    <div class="nav-links">
+      <a href="../index.html">About</a>
+      <a href="../publications.html">Publications</a>
+      <a href="../cv.html">CV</a>
+      <a href="../teaching.html">Teaching</a>
+      <a class="play-link" href="index.html" aria-current="page">Play</a>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap-wide">
+
+  <div class="page-head">
+    <h1>Game of Life lab</h1>
+    <p class="lede">Conway's Game of Life (1970) has just two rules — a dead cell with exactly 3 neighbors is born, a live cell with 2 or 3 survives — yet it contains gliders, guns, and universal computers. Draw on the grid, drop in a famous pattern, or change the rules themselves and watch a different universe unfold. The board starts loaded with a <em>Gosper glider gun</em>: press Run.</p>
+  </div>
+
+  <div class="demo">
+    <aside class="panel" aria-label="Simulation controls">
+      <fieldset>
+        <legend>Simulation</legend>
+        <div class="btn-row" style="margin-top:0">
+          <button class="btn primary" id="l-play" type="button">▶ Run</button>
+          <button class="btn" id="l-step" type="button">Step</button>
+          <button class="btn" id="l-clear" type="button">Clear</button>
+        </div>
+        <label class="ctl">
+          <span class="ctl-row"><span>Speed</span><output id="l-speed-out">18/s</output></span>
+          <input type="range" id="l-speed" min="1" max="60" step="1" value="18">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Board</legend>
+        <label class="ctl">
+          <span class="ctl-row"><span>Pattern</span></span>
+          <select id="l-preset"></select>
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Soup density</span><output id="l-density-out">28%</output></span>
+          <input type="range" id="l-density" min="5" max="60" step="1" value="28">
+        </label>
+        <div class="btn-row" style="margin-top:4px">
+          <button class="btn" id="l-random" type="button">Random soup</button>
+        </div>
+        <label class="check-row"><input type="checkbox" id="l-wrap" checked> Wrap at the edges (torus)</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Rules</legend>
+        <label class="ctl">
+          <span class="ctl-row"><span>Preset</span></span>
+          <select id="l-rule"></select>
+        </label>
+        <p class="bs-name">Born with n neighbors</p>
+        <div class="bs-grid" id="l-b-grid"></div>
+        <p class="bs-name">Survives with n neighbors</p>
+        <div class="bs-grid" id="l-s-grid"></div>
+        <p class="small faint" style="margin:8px 0 0">Try HighLife's replicator, or Seeds for fireworks.</p>
+      </fieldset>
+    </aside>
+
+    <div class="stage">
+      <canvas id="life-canvas" width="1120" height="704" aria-label="Game of Life grid. Click and drag to draw cells."></canvas>
+      <div class="readout">
+        <span id="l-gen">gen 0</span>
+        <span id="l-pop">pop 0</span>
+        <span id="l-rule-out">B3/S23</span>
+        <span>draw with your mouse</span>
+      </div>
+      <p class="stage-note">Cells are tinted by age: bright blue for newborns, fading toward ink as they survive. The gun fires a glider every 30 generations — on a wrapping board its own gliders will eventually come back around and destroy it, which feels like a metaphor for something.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap-wide foot-row">
+    <span>© 2026 Nicholas Ferrari</span>
+    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
+    <span>Hand-built with plain HTML · <a href="https://github.com/yourusername/yourusername.github.io">source</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/life-engine.js"></script>
+<script src="../assets/js/patterns.js"></script>
+<script src="../assets/js/life-ui.js"></script>
+</body>
+</html>

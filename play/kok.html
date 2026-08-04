@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Kok clock — Nicholas Ferrari</title>
+<meta name="description" content="Interactive Kok model of the PSII S-state cycle: period-four oxygen yields, miss and double-hit probabilities, and the overlapping period-two acceptor-side signal.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-head">
+  <nav class="nav wrap-wide" aria-label="Main">
+    <a class="brand" href="../index.html">Nicholas Ferrari</a>
+    <div class="nav-links">
+      <a href="../index.html">About</a>
+      <a href="../publications.html">Publications</a>
+      <a href="../cv.html">CV</a>
+      <a href="../teaching.html">Teaching</a>
+      <a class="play-link" href="index.html" aria-current="page">Play</a>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap-wide">
+
+  <div class="page-head">
+    <h1>The Kok clock</h1>
+    <p class="lede">Photosystem II splits water four electrons at a time, so its oxygen-evolving complex has to count to four. Fire a train of saturating flashes at dark-adapted cells and the oxygen comes out in a beautiful period-four oscillation, peaking on the third flash and damping away — the 1970 Kok result that told us the mechanism before anyone could see the structure. Everything below is that model, live.</p>
+  </div>
+
+  <div class="demo">
+    <aside class="panel" aria-label="Model parameters">
+      <fieldset>
+        <legend>Flash sequence</legend>
+        <label class="ctl">
+          <span class="ctl-row"><span>Miss probability α</span><output id="k-miss-out">10%</output></span>
+          <input type="range" id="k-miss" min="0" max="0.4" step="0.01" value="0.10">
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Double hit β</span><output id="k-double-out">5%</output></span>
+          <input type="range" id="k-double" min="0" max="0.25" step="0.01" value="0.05">
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Dark-adapted</span><output id="k-s1-out">S₁ 75% / S₀ 25%</output></span>
+          <input type="range" id="k-s1" min="0.5" max="1" step="0.01" value="0.75">
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Flashes</span><output id="k-flashes-out">24</output></span>
+          <input type="range" id="k-flashes" min="8" max="48" step="1" value="24">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Acceptor side</legend>
+        <label class="ctl">
+          <span class="ctl-row"><span>Period-2 amplitude</span><output id="k-acc-out">0.30</output></span>
+          <input type="range" id="k-acc" min="0" max="0.6" step="0.01" value="0.30">
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Period-2 damping</span><output id="k-acc-tau-out">6 flashes</output></span>
+          <input type="range" id="k-acc-tau" min="1" max="30" step="1" value="6">
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Show</span></span>
+          <select id="k-view">
+            <option value="all">Raw + both components</option>
+            <option value="raw">Raw signal only</option>
+            <option value="split">Separated components</option>
+            <option value="donor">Donor side only</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Populations</legend>
+        <label class="ctl">
+          <span class="ctl-row"><span>Inspect</span><output id="k-flash-pick-out">flash 3</output></span>
+          <input type="range" id="k-flash-pick" min="0" max="24" step="1" value="3">
+        </label>
+        <div id="k-wheel"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Export</legend>
+        <div class="btn-row" style="margin-top:0">
+          <button class="btn primary" id="k-png" type="button">Download PNG</button>
+          <button class="btn" id="k-reset" type="button">Reset</button>
+        </div>
+      </fieldset>
+    </aside>
+
+    <div class="stage">
+      <canvas id="kok-canvas" width="1120" height="500" aria-label="Flash-induced oxygen yield versus flash number, showing a damped period-four oscillation and a period-two acceptor-side component."></canvas>
+      <div id="kok-tip" class="tip" style="display:none"></div>
+      <div class="legend" id="k-legend"></div>
+
+      <p class="stage-note">Set the miss probability to zero and the oscillation never damps — every center stays in lockstep and oxygen appears only on flashes 3, 7, 11. Misses are what smear the clock: a few percent per flash and the whole population has decohered into a flat steady state within twenty flashes.</p>
+
+      <p class="stage-note"><strong>Why the second component matters.</strong> The donor side counts to four, but the acceptor side (the Q<sub>A</sub>/Q<sub>B</sub> two-electron gate) counts to two, and a real measurement records their sum. Fit a period-four kinetic model straight to that sum and the optimizer reads the period-two ripple as fast damping, biasing the miss probability, the backward transitions, and the starting populations. In <a href="../publications.html">Ferrari, Russell &amp; Vinyard (2026)</a> I used the Empirical Wavelet Transform to pull the two apart before fitting, which recovers the donor-side transition probabilities with much less bias — including on Joliot and Forbush's original 1969&nbsp;data. Switch "Show" to <em>Separated components</em> to see the two signals this demo added together.</p>
+
+      <p class="small faint">The donor-side model here is the standard Kok scheme (misses, double hits, no backward transitions). The period-two trace is a schematic damped alternation standing in for the acceptor-side oscillation, not a full Q<sub>A</sub>/Q<sub>B</sub> simulation — it is here to show the superposition problem, not to fit your data.</p>
+
+      <details class="table-view">
+        <summary>View the underlying numbers</summary>
+        <div id="k-table"></div>
+      </details>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap-wide foot-row">
+    <span>© 2026 Nicholas Ferrari</span>
+    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
+    <span>Hand-built with plain HTML · <a href="https://github.com/yourusername/yourusername.github.io">source</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/plot.js"></script>
+<script src="../assets/js/photosynthesis.js"></script>
+<script src="../assets/js/kok-ui.js"></script>
+</body>
+</html>

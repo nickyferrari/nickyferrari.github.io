@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designing a light environment — Nicholas Ferrari</title>
+<meta name="description" content="Interactive demo: matching the Total Variation of a periodic square-wave light environment to a stochastic one, so temporal pattern can be separated from photon dose.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-head">
+  <nav class="nav wrap-wide" aria-label="Main">
+    <a class="brand" href="../index.html">Nicholas Ferrari</a>
+    <div class="nav-links">
+      <a href="../index.html">About</a>
+      <a href="../publications.html">Publications</a>
+      <a href="../cv.html">CV</a>
+      <a href="../teaching.html">Teaching</a>
+      <a class="play-link" href="index.html" aria-current="page">Play</a>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap-wide">
+
+  <div class="page-head">
+    <h1>Designing a light environment</h1>
+    <p class="lede">Algae in a turbulent water column and leaves under a moving canopy never see constant light. But "fluctuating light" is not one treatment — a regular flicker and an unpredictable one can deliver <em>identical</em> average irradiance and total photon dose while being completely different environments to acclimate to. To ask whether unpredictability itself carries a cost, you first have to control everything else. This is the design I use to do that.</p>
+  </div>
+
+  <div class="demo">
+    <aside class="panel" aria-label="Environment controls">
+      <fieldset>
+        <legend>Light environment</legend>
+        <label class="ctl">
+          <span class="ctl-row"><span>Mean irradiance µ</span><output id="e-mu-out">300 µmol</output></span>
+          <input type="range" id="e-mu" min="50" max="800" step="10" value="300">
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Stochastic spread σ</span><output id="e-sigma-out">± 60</output></span>
+          <input type="range" id="e-sigma" min="0" max="250" step="5" value="60">
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Square-wave amplitude A</span><output id="e-amp-out">± 200</output></span>
+          <input type="range" id="e-amp" min="20" max="400" step="10" value="200">
+        </label>
+        <label class="ctl">
+          <span class="ctl-row"><span>Window</span><output id="e-hours-out">0.5 h</output></span>
+          <input type="range" id="e-hours" min="0.25" max="4" step="0.25" value="0.5">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>View</legend>
+        <label class="ctl">
+          <span class="ctl-row"><span>Show</span></span>
+          <select id="e-show">
+            <option value="both">Both environments</option>
+            <option value="stochastic">Stochastic only</option>
+            <option value="periodic">Periodic only</option>
+          </select>
+        </label>
+        <div class="btn-row">
+          <button class="btn" id="e-reseed" type="button">New noise draw</button>
+          <button class="btn" id="e-png" type="button">PNG</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>The matching rule</legend>
+        <p class="eq">TV = Σ |I(t+1) − I(t)|
+E[TV] = (n−1) · 2σ/√π
+k transitions = TV / 2A</p>
+        <p class="small faint" style="margin:8px 0 0">Total Variation measures how much the light <em>moves</em>, independent of where it sits. Match it, and the only thing left different is the pattern.</p>
+      </fieldset>
+    </aside>
+
+    <div class="stage">
+      <canvas id="light-canvas" width="1120" height="500" aria-label="Two light environment traces: a stochastic trace redrawn from a normal distribution, and a Total-Variation-matched periodic square wave."></canvas>
+      <div id="light-tip" class="tip" style="display:none"></div>
+      <div class="legend" id="e-legend"></div>
+
+      <div class="stat-row">
+        <div class="stat"><span class="k">mean irradiance</span><span class="v" id="st-mean">—</span></div>
+        <div class="stat"><span class="k">photon dose <small>mmol m⁻²</small></span><span class="v" id="st-dose">—</span></div>
+        <div class="stat"><span class="k">total variation</span><span class="v" id="st-tv">—</span></div>
+        <div class="stat match"><span class="k">TV match</span><span class="v" id="st-match">—</span></div>
+        <div class="stat"><span class="k">square-wave flips</span><span class="v" id="st-flips">—</span></div>
+        <div class="stat"><span class="k">E[TV] predicted</span><span class="v" id="st-expected">—</span></div>
+      </div>
+      <p class="small faint" style="margin-top:8px">Each statistic reads <span style="color:var(--series-1)">stochastic</span> / <span style="color:var(--series-2)">periodic</span>.</p>
+
+      <p class="stage-note" id="e-warn" style="color:var(--danger)"></p>
+
+      <p class="stage-note">Intensity updates every 15 s, the real update interval of the multicultivator these protocols run on. Drag σ up and watch the square wave flip faster to keep pace: the two environments stay matched in mean, in dose, and in total movement, and differ only in whether the next change is predictable. That last difference is what my dissertation is about.</p>
+
+      <details class="table-view">
+        <summary>View the underlying numbers</summary>
+        <div id="e-table"></div>
+      </details>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap-wide foot-row">
+    <span>© 2026 Nicholas Ferrari</span>
+    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
+    <span>Hand-built with plain HTML · <a href="https://github.com/yourusername/yourusername.github.io">source</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/plot.js"></script>
+<script src="../assets/js/photosynthesis.js"></script>
+<script src="../assets/js/light-ui.js"></script>
+</body>
+</html>

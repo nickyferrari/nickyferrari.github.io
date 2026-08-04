@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+  <!-- Placeholder portrait. EDIT: replace this file (or the <img> src in
+       index.html) with a real photo, e.g. assets/me.jpg -->
+  <defs>
+    <clipPath id="c"><circle cx="240" cy="240" r="240"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="480" height="480" fill="#E9EEFB"/>
+    <polyline points="-10,300 30,180 70,360 110,210 150,330 190,150 230,350 270,230 310,300 350,170 390,320 430,200 490,280"
+              fill="none" stroke="#B9C8F2" stroke-width="7" stroke-linejoin="round"/>
+    <polyline points="-10,380 -10,120 110,120 110,380 230,380 230,120 350,120 350,380 490,380"
+              fill="none" stroke="#C9D5F6" stroke-width="7" stroke-linejoin="round"/>
+    <text x="240" y="292" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="150" font-weight="600" fill="#2B59C3">NF</text>
+  </g>
+</svg>

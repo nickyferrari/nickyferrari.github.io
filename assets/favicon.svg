@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Two light environments over one window: the motif of the research. -->
+  <rect width="64" height="64" rx="14" fill="#14161A"/>
+  <polyline points="7,44 12,26 17,52 22,30 27,48 32,22 37,50 42,34 47,44 52,28 57,40"
+            fill="none" stroke="#6E8FE8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="7,50 7,18 22,18 22,50 37,50 37,18 52,18 52,50 57,50"
+            fill="none" stroke="#D8B25C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity=".92"/>
+</svg>

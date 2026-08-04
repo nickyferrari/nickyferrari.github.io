@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Golf — Nicholas Ferrari</title>
+<meta name="description" content="A puzzle game built on Conway's Game of Life: seed a few cells, launch, and get a signal to the green in as few cells as possible.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-head">
+  <nav class="nav wrap-wide" aria-label="Main">
+    <a class="brand" href="../index.html">Nicholas Ferrari</a>
+    <div class="nav-links">
+      <a href="../index.html">About</a>
+      <a href="../publications.html">Publications</a>
+      <a href="../cv.html">CV</a>
+      <a href="../teaching.html">Teaching</a>
+      <a class="play-link" href="index.html" aria-current="page">Play</a>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap-wide">
+
+  <div class="page-head">
+    <h1>Life Golf</h1>
+    <p class="lede">Five holes, one physics: pure Conway's Game of Life, running on the exact same engine as the <a href="life.html">lab</a>. Place seed cells in the blue launch zone, press Launch, and satisfy the hole's goal before the generation clock runs out. Your score is the number of cells you spend — par assumes a clean spaceship. Every hole is provably solvable (the test suite brute-forces a winning line before I'm allowed to publish it).</p>
+  </div>
+
+  <div class="demo">
+    <aside class="panel" aria-label="Game controls">
+      <fieldset>
+        <legend>Hole</legend>
+        <div class="level-chips" id="g-chips"></div>
+        <h3 id="g-title" style="margin:4px 0 0"></h3>
+        <p class="level-blurb" id="g-blurb"></p>
+        <details class="hint-details">
+          <summary>Caddie's hint</summary>
+          <p id="g-hint"></p>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>Stamps</legend>
+        <div class="stamp-grid" id="g-stamps"></div>
+        <div class="btn-row">
+          <button class="btn small" id="g-rotate" type="button">⟳ Rotate (R)</button>
+          <span class="small muted" id="g-heading" style="align-self:center"></span>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Round</legend>
+        <div class="btn-row" style="margin-top:0">
+          <button class="btn primary" id="g-launch" type="button">▶ Launch</button>
+          <button class="btn" id="g-undo" type="button">Undo</button>
+          <button class="btn" id="g-clear" type="button">Clear</button>
+        </div>
+        <label class="ctl">
+          <span class="ctl-row"><span>Speed</span><output id="g-speed-out">30/s</output></span>
+          <input type="range" id="g-speed" min="5" max="60" step="1" value="30">
+        </label>
+      </fieldset>
+    </aside>
+
+    <div class="stage">
+      <canvas id="golf-canvas" width="1120" height="720" aria-label="Life Golf board. Click to place cells in the launch zone."></canvas>
+      <div id="g-overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h3 id="g-overlay-title"></h3>
+          <p id="g-overlay-body"></p>
+          <div class="btn-row">
+            <button class="btn primary" id="g-next" type="button">Next hole →</button>
+            <button class="btn" id="g-retry" type="button">Improve my line</button>
+          </div>
+        </div>
+      </div>
+      <div class="readout">
+        <span id="g-cells">0 / 9 cells</span>
+        <span id="g-gen">gen 0</span>
+        <span id="g-status"></span>
+      </div>
+      <p class="stage-note">Blue zone: your tee. Gold dashed zone: the green. Gray squares: fixed structures with opinions. Left-click places the selected stamp, right-click erases a cell, R rotates.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap-wide foot-row">
+    <span>© 2026 Nicholas Ferrari</span>
+    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
+    <span>Hand-built with plain HTML · <a href="https://github.com/yourusername/yourusername.github.io">source</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/life-engine.js"></script>
+<script src="../assets/js/patterns.js"></script>
+<script src="../assets/js/golf-levels.js"></script>
+<script src="../assets/js/golf-ui.js"></script>
+</body>
+</html>
