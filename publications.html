@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head">
   <nav class="nav wrap" aria-label="Main">
@@ -22,42 +23,41 @@
       <a href="publications.html" aria-current="page">Publications</a>
       <a href="cv.html">CV</a>
       <a href="teaching.html">Teaching</a>
-      <a class="play-link" href="play/index.html">Play</a>
+      <a class="play-link" href="play/index.html">Interactive</a>
       <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
     </div>
   </nav>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main">
 
   <div class="page-head">
     <h1>Publications</h1>
-    <!-- EDIT: link your real Google Scholar / ORCID profiles -->
-    <p class="lede">Also on <a href="https://scholar.google.com">Google Scholar</a> and <a href="https://orcid.org">ORCID</a>. An asterisk (*) denotes equal contribution.</p>
+
+    <p class="lede">Research on photosynthetic regulation, reaction kinetics, and photorespiratory engineering.</p>
   </div>
 
   <section>
-    <p class="section-label">In preparation</p>
+    <h2 class="section-label">In preparation</h2>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">The differential cost of photosynthetic acclimation to temporal light noise</p>
       <p class="pub-authors"><span class="me">N. Ferrari</span> and D. J. Vinyard</p>
       <p class="pub-venue">Manuscript in preparation, 2026</p>
-      <p class="small muted" style="margin:6px 0 0">The central chapter of my dissertation: <em>C. reinhardtii</em> acclimates to the quantity of light stress but not to its unpredictability, and each regulatory layer leaves a separable signature in that response.</p>
-    </div>
+      <p class="small muted" style="margin:6px 0 0">Dissertation research comparing acclimation to predictable and stochastic light in <em>Chlamydomonas reinhardtii</em>.</p>
+    </article>
   </section>
 
   <section>
-    <p class="section-label">2026</p>
+    <h2 class="section-label">2026</h2>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Tuning Shinkarev's bicycle: separating the parallel cycles of Photosystem II using Empirical Wavelet Transform</p>
       <p class="pub-authors"><span class="me">N. Ferrari</span>, B. P. Russell, and D. J. Vinyard</p>
       <p class="pub-venue">Plants, vol. 15, no. 4, 625, 2026</p>
       <div class="pub-links">
-        <!-- EDIT: drop in the real DOI / PDF links -->
-        <a href="https://doi.org">DOI</a>
-        <a href="#">PDF</a>
+
+        <a href="https://doi.org/10.3390/plants15040625">Read paper ↗</a>
         <details>
           <summary>BibTeX</summary>
           <div class="bibtex-box">@article{ferrari2026tuning,
@@ -68,83 +68,84 @@
   volume  = {15},
   number  = {4},
   pages   = {625},
+  doi     = {10.3390/plants15040625},
   year    = {2026}
 }</div>
         </details>
       </div>
-    </div>
+    </article>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Plastid carbonic anhydrases are essential for growth of <em>Arabidopsis</em> on ambient air but not for photosynthesis</p>
       <p class="pub-authors">H. N. Weerasooriya, I. C. M. Pabuayon, X. Wang, H. S. Mehra, N. Kulkarni, <span class="me">N. Ferrari</span>, et al., and J. V. Moroney</p>
       <p class="pub-venue">Plant Physiology, kiag048, 2026</p>
       <div class="pub-links">
-        <a href="https://doi.org">DOI</a>
+        <a href="https://doi.org/10.1093/plphys/kiag048">Read paper ↗</a>
       </div>
-    </div>
+    </article>
   </section>
 
   <section>
-    <p class="section-label">2024</p>
+    <h2 class="section-label">2024</h2>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Shortcutting photorespiration protects potato photosynthesis and tuber yield against heatwave stress</p>
       <p class="pub-authors">K. Meacham-Hensold, A. P. Cavanagh, P. Sorensen, P. F. South, J. Fowler, … <span class="me">N. Ferrari</span>, et al.</p>
       <p class="pub-venue">Global Change Biology, vol. 30, no. 12, e17595, 2024</p>
       <div class="pub-links">
-        <a href="https://doi.org">DOI</a>
+        <a href="https://doi.org/10.1111/gcb.17595">Read paper ↗</a>
       </div>
-    </div>
+    </article>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Assembly and repair of Photosystem II in <em>Chlamydomonas reinhardtii</em></p>
       <p class="pub-authors">H. S. Mehra, X. Wang, B. P. Russell, N. Kulkarni, <span class="me">N. Ferrari</span>, B. Larson, et al.</p>
       <p class="pub-venue">Plants, vol. 13, no. 6, 811, 2024</p>
       <div class="pub-links">
-        <a href="https://doi.org">DOI</a>
+        <a href="https://doi.org/10.3390/plants13060811">Read paper ↗</a>
       </div>
-    </div>
+    </article>
   </section>
 
   <section>
-    <p class="section-label">2022</p>
+    <h2 class="section-label">2022</h2>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Evaluation of photosynthetic efficiency in photorespiratory mutants by chlorophyll fluorescence analysis</p>
       <p class="pub-authors">J. Qian, <span class="me">N. Ferrari</span>, R. Garcia, M. B. L. Rollins, and P. F. South</p>
       <p class="pub-venue">Journal of Visualized Experiments (JoVE), e63801, 2022</p>
       <div class="pub-links">
-        <a href="https://doi.org">DOI</a>
+        <a href="https://doi.org/10.3791/63801">Read paper ↗</a>
       </div>
-    </div>
+    </article>
   </section>
 
   <section>
-    <p class="section-label">Conference presentations</p>
+    <h2 class="section-label">Conference presentations</h2>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Algal acclimation to stochastic light environments</p>
       <p class="pub-authors">Talk</p>
       <p class="pub-venue">Midwest/Southeast Photosynthesis Conference, Indiana, October 2025</p>
-    </div>
+    </article>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Photosynthetic performance and kinetic modeling in dynamic environments</p>
       <p class="pub-authors">Poster</p>
       <p class="pub-venue">Gordon Research Conference &amp; Seminar on CO₂ Assimilation in Plants, Maine, June 2025</p>
-    </div>
+    </article>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Glycolate disrupts electron transport from PSII</p>
       <p class="pub-authors">Poster</p>
       <p class="pub-venue">Midwest/Southeast Photosynthesis Conference, Indiana, October 2024</p>
-    </div>
+    </article>
 
-    <div class="pub">
+    <article class="pub">
       <p class="pub-title">Drought-induced flowering is accelerated in stochastic environments</p>
       <p class="pub-authors">Poster</p>
       <p class="pub-venue">American Society for Plant Biologists, Oregon, July 2022</p>
-    </div>
+    </article>
   </section>
 
 </main>
@@ -152,8 +153,7 @@
 <footer class="site-foot">
   <div class="wrap foot-row">
     <span>© 2026 Nicholas Ferrari</span>
-    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
-    <span>Hand-built with plain HTML · <a href="https://github.com/yourusername/yourusername.github.io">source</a></span>
+    <div class="footer-links"><a href="mailto:nickferrari95@gmail.com">Email</a><a href="https://github.com/nickyferrari">GitHub</a><a href="cv.html">CV</a></div>
   </div>
 </footer>
 

@@ -2,7 +2,7 @@
    life-engine.js — a small, fast engine for Conway-family
    cellular automata (outer-totalistic rules on a square grid).
 
-   Shared by the Game of Life lab, Life Golf, and the test
+   Shared by the Game of Life lab and the test
    suite: it runs both in the browser (as window.Life) and in
    Node (via module.exports), with no dependencies.
    ============================================================ */

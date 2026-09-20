@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
-<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head">
   <nav class="nav wrap-wide" aria-label="Main">
@@ -22,17 +23,17 @@
       <a href="../publications.html">Publications</a>
       <a href="../cv.html">CV</a>
       <a href="../teaching.html">Teaching</a>
-      <a class="play-link" href="index.html" aria-current="page">Play</a>
+      <a class="play-link" href="index.html" aria-current="page">Interactive</a>
       <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
     </div>
   </nav>
 </header>
 
-<main class="wrap-wide">
+<main class="wrap-wide" id="main">
 
   <div class="page-head">
     <h1>The Kok clock</h1>
-    <p class="lede">Photosystem II splits water four electrons at a time, so its oxygen-evolving complex has to count to four. Fire a train of saturating flashes at dark-adapted cells and the oxygen comes out in a beautiful period-four oscillation, peaking on the third flash and damping away. This is the 1970 Kok result that told us the mechanism before anyone could see the structure. Everything below is that model, live.</p>
+    <p class="lede">Explore how Photosystem II’s four-step cycle produces oscillations in oxygen yield. Adjust misses, double hits, and starting populations to see how the response changes.</p>
   </div>
 
   <div class="demo">
@@ -101,14 +102,14 @@
       <div id="kok-tip" class="tip" style="display:none"></div>
       <div class="legend" id="k-legend"></div>
 
-      <p class="stage-note">Set the miss probability to zero and the oscillation never damps. Every center stays in lockstep and oxygen appears only on flashes 3, 7, 11. Misses are what smear the clock: a few percent per flash and the whole population has decohered into a flat steady state within twenty flashes.</p>
+      <p class="stage-note">Set misses and double hits to zero, then set the initial S₁ population to 100%. Oxygen yield peaks on flashes 3, 7, and 11 without damping. Increasing the miss probability spreads the population across the four states and reduces the oscillation.</p>
 
-      <p class="stage-note"><strong>Why the second component matters.</strong> The donor side counts to four, but the acceptor side (the Q<sub>A</sub>/Q<sub>B</sub> two-electron gate) counts to two, and a real measurement records their sum. Fit a period-four kinetic model straight to that sum and the optimizer reads the period-two ripple as fast damping, biasing the miss probability, the backward transitions, and the starting populations. In <a href="../publications.html">Ferrari, Russell &amp; Vinyard (2026)</a> I used the Empirical Wavelet Transform to pull the two apart before fitting. That recovers the donor-side transition probabilities with much less bias, including on Joliot and Forbush's original 1969&nbsp;data. Switch "Show" to <em>Separated components</em> to see the two signals this demo added together.</p>
+      <p class="stage-note">Photosystem II measurements can combine a period-four donor signal with a period-two acceptor signal. Fitting their sum can bias estimates of reaction kinetics. In <a href="../publications.html">Ferrari, Russell &amp; Vinyard (2026)</a>, we used the Empirical Wavelet Transform to separate these components before fitting. Select <em>Separated components</em> to view the signals used here.</p>
 
-      <p class="small faint">The donor-side model here is the standard Kok scheme (misses, double hits, no backward transitions). The period-two trace is a schematic damped alternation standing in for the acceptor-side oscillation, not a full Q<sub>A</sub>/Q<sub>B</sub> simulation. It is here to show the superposition problem, not to fit your data.</p>
+      <p class="small faint">This demonstration uses a Kok model with misses and double hits but no backward transitions. The period-two component is a schematic damped oscillation, not a full acceptor-side simulation or a tool for fitting experimental data.</p>
 
       <details class="table-view">
-        <summary>View the underlying numbers</summary>
+        <summary>View data table</summary>
         <div id="k-table"></div>
       </details>
     </div>
@@ -117,10 +118,9 @@
 </main>
 
 <footer class="site-foot">
-  <div class="wrap-wide foot-row">
+  <div class="wrap foot-row">
     <span>© 2026 Nicholas Ferrari</span>
-    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
-    <span>Hand-built with plain HTML · <a href="https://github.com/nickyferrari/nickyferrari.github.io">source</a></span>
+    <div class="footer-links"><a href="mailto:nickferrari95@gmail.com">Email</a><a href="https://github.com/nickyferrari">GitHub</a><a href="../cv.html">CV</a></div>
   </div>
 </footer>
 

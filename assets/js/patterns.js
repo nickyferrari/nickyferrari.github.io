@@ -102,17 +102,6 @@
     { id: 'blinker',  name: 'Blinker (period 2)',           cells: BLINKER }
   ];
 
-  /* Stamps available in Life Golf. Cost = number of cells. */
-  var STAMPS = [
-    { id: 'single',  name: 'Cell',    cells: [[0, 0]], rotates: false },
-    { id: 'blinker', name: 'Blinker', cells: BLINKER,  rotates: true  },
-    { id: 'block',   name: 'Block',   cells: BLOCK,    rotates: false },
-    { id: 'glider',  name: 'Glider',  cells: GLIDER,   rotates: true,
-      headings: ['↘', '↙', '↖', '↗'] },  /* SE SW NW NE */
-    { id: 'lwss',    name: 'LWSS',    cells: LWSS,     rotates: true,
-      headings: ['→', '↓', '←', '↑'] }   /* E S W N */
-  ];
-
   var api = {
     normalize: normalize,
     rot90: rot90,
@@ -128,8 +117,7 @@
     DIEHARD: DIEHARD,
     GOSPER_GUN: GOSPER_GUN,
     PENTADECATHLON_SEED: PENTADECATHLON_SEED,
-    PRESETS: PRESETS,
-    STAMPS: STAMPS
+    PRESETS: PRESETS
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = api;

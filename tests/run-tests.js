@@ -1,6 +1,5 @@
 /* ============================================================
-   run-tests.js — verification suite for the site's Life engine
-   and (once defined) the Life Golf levels.
+   run-tests.js — checks for the Life engine and interactive models.
 
    Run with:  node tests/run-tests.js     (no dependencies)
    ============================================================ */
@@ -155,32 +154,7 @@ console.log('— engine basics —');
     'measured ' + measureShift(before, after));
 })();
 
-/* ---- Life Golf levels (only if the level file exists) ---- */
-
-var levelsPath = '../assets/js/golf-levels.js';
-var fs = require('fs');
-var path = require('path');
-if (fs.existsSync(path.join(__dirname, levelsPath))) {
-  var G = require(levelsPath);
-  var solver = require('./golf-solver.js');
-  console.log('\n— Life Golf levels —');
-  G.LEVELS.forEach(function (level) {
-    var empty = solver.simulate(level, []);
-    check('[' + level.id + '] empty board must NOT win', !empty.win,
-      empty.win ? 'wins at gen ' + empty.gen : '');
-    var sol = solver.solve(level);
-    check('[' + level.id + '] solvable within budget ' + level.budget,
-      !!sol && sol.cost <= level.budget,
-      sol ? 'best: ' + sol.desc + ' (cost ' + sol.cost + ', wins gen ' + sol.gen + ')' : 'NO SOLUTION FOUND');
-    if (sol) {
-      console.log('        solution: ' + sol.desc + ' → cost ' + sol.cost + ', wins at gen ' + sol.gen);
-      if (sol.cost !== level.par)
-        console.log('        WARNING: par is ' + level.par + ' but best found cost is ' + sol.cost);
-    }
-  });
-} else {
-  console.log('\n(golf levels not present yet — skipping golf checks)');
-}
+require('./test-penrose.js')(check);
 
 /* ---- science demos (Kok model, dynamic light environments) ---- */
 

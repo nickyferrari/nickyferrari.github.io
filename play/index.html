@@ -3,40 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Playground — Nicholas Ferrari</title>
-<meta name="description" content="Interactive demos: dynamic light environment design, the PSII Kok clock, a Penrose tiling explorer, a Game of Life lab, and a puzzle game built on the Life engine.">
+<title>Interactive — Nicholas Ferrari</title>
+<meta name="description" content="Interactive demos: dynamic light environment design, the PSII Kok clock, a Penrose tiling explorer, and a Game of Life lab.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
-<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head">
-  <nav class="nav wrap-wide" aria-label="Main">
+  <nav class="nav wrap" aria-label="Main">
     <a class="brand" href="../index.html">Nicholas Ferrari</a>
     <div class="nav-links">
       <a href="../index.html">About</a>
       <a href="../publications.html">Publications</a>
       <a href="../cv.html">CV</a>
       <a href="../teaching.html">Teaching</a>
-      <a class="play-link" href="index.html" aria-current="page">Play</a>
+      <a class="play-link" href="index.html" aria-current="page">Interactive</a>
       <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
     </div>
   </nav>
 </header>
 
-<main class="wrap-wide">
+<main class="wrap" id="main">
 
   <div class="page-head">
-    <h1>The Playground</h1>
-    <p class="lede">Two of these are my research, made poke-able. The rest are things I find beautiful for their own sake. Everything runs in your browser. No installs, nothing collected, just the models doing what they do.</p>
+    <h1>Interactive</h1>
+    <p class="lede">Interactive models of photosynthesis, geometry, and cellular automata. Change a parameter and see what follows.</p>
   </div>
 
   <section>
-    <p class="section-label">From my research</p>
+    <h2 class="section-label">Research models</h2>
     <div class="demo-cards">
 
       <a class="card card-link" href="light.html">
@@ -48,8 +49,8 @@
                     fill="none" stroke="#B5540C" stroke-width="2.4" stroke-linejoin="round"/>
         </svg>
         <h3>Designing a light environment</h3>
-        <p>Same mean, same photon dose, same Total Variation. One predictable, one not. The experimental design at the center of my dissertation, with the sliders exposed.</p>
-        <span class="go">Open the designer →</span>
+        <p>Compare periodic and stochastic light. Explore how photon dose and total variation constrain an experiment.</p>
+        <span class="go">Explore light →</span>
       </a>
 
       <a class="card card-link" href="kok.html">
@@ -63,33 +64,119 @@
           </g>
         </svg>
         <h3>The Kok clock</h3>
-        <p>Photosystem II counts to four. Fire flashes at dark-adapted cells and oxygen comes out in a damped period-four oscillation, with a period-two signal hiding underneath it.</p>
-        <span class="go">Run the flash train →</span>
+        <p>Explore the four-step oxygen-evolving cycle of Photosystem II and the effect of overlapping signals.</p>
+        <span class="go">Explore the model →</span>
       </a>
 
     </div>
   </section>
 
   <section>
-    <p class="section-label">For the fun of it</p>
+    <h2 class="section-label">Patterns &amp; play</h2>
     <div class="demo-cards">
 
       <a class="card card-link" href="penrose.html">
-        <svg class="thumb" viewBox="0 0 200 120" role="img" aria-label="Penrose tiling preview">
-          <rect width="200" height="120" fill="#F7F8FC"/>
-          <g stroke="#17203F" stroke-width="1.2" stroke-linejoin="round">
-            <polygon points="100,18 124,60 100,102 76,60" fill="#2E5BC7"/>
-            <polygon points="100,18 152,34 124,60" fill="#B9C8F2"/>
-            <polygon points="100,18 48,34 76,60" fill="#B9C8F2"/>
-            <polygon points="124,60 152,86 100,102" fill="#B9C8F2"/>
-            <polygon points="76,60 48,86 100,102" fill="#B9C8F2"/>
-            <polygon points="152,34 176,60 152,86 124,60" fill="#2E5BC7"/>
-            <polygon points="48,34 24,60 48,86 76,60" fill="#2E5BC7"/>
-          </g>
-        </svg>
+        <svg class="thumb" viewBox="0 0 200 120" role="img" aria-label="A ribbon highlighted in a Penrose tiling">
+<rect width="200" height="120" fill="#F1F1EB"/>
+<polygon points="45.99,73.08 54.49,73.08 57.12,65.00 48.62,65.00" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="52.87,51.92 61.37,51.92 63.99,43.83 55.49,43.83" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,81.16 79.37,81.16 82.00,73.08 73.50,73.08" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="77.75,60.00 86.25,60.00 88.87,51.92 80.37,51.92" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,38.84 79.37,38.84 82.00,30.75 73.50,30.75" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,81.16 101.62,81.16 104.25,73.08 95.75,73.08" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,65.00 101.62,65.00 104.25,56.91 95.75,56.91" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,38.84 101.62,38.84 104.25,30.75 95.75,30.75" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,94.24 119.63,94.24 122.25,86.16 113.75,86.16" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="118.00,73.08 126.50,73.08 129.13,65.00 120.63,65.00" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,51.92 119.63,51.92 122.25,43.83 113.75,43.83" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="55.49,43.83 63.99,43.83 57.12,38.84 48.62,38.84" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="77.75,86.16 86.25,86.16 79.37,81.16 70.87,81.16" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="80.37,51.92 88.87,51.92 82.00,46.92 73.50,46.92" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="95.75,99.24 104.25,99.24 97.37,94.24 88.87,94.24" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="95.75,56.91 104.25,56.91 97.37,51.92 88.87,51.92" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="95.75,30.75 104.25,30.75 97.37,25.76 88.87,25.76" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="120.63,65.00 129.13,65.00 122.25,60.00 113.75,60.00" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="118.00,30.75 126.50,30.75 119.63,25.76 111.13,25.76" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="48.62,65.00 57.12,65.00 63.99,60.00 55.49,60.00" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,22.67 79.37,22.67 86.25,17.67 77.75,17.67" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,65.00 79.37,65.00 86.25,60.00 77.75,60.00" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,91.16 79.37,91.16 86.25,86.16 77.75,86.16" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="88.87,51.92 97.37,51.92 104.25,46.92 95.75,46.92" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="86.25,86.16 94.75,86.16 101.62,81.16 93.12,81.16" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="113.75,43.83 122.25,43.83 129.13,38.84 120.63,38.84" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,78.08 119.63,78.08 126.50,73.08 118.00,73.08" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="55.49,60.00 63.99,60.00 61.37,51.92 52.87,51.92" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="73.50,30.75 82.00,30.75 79.37,22.67 70.87,22.67" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="73.50,46.92 82.00,46.92 79.37,38.84 70.87,38.84" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="73.50,73.08 82.00,73.08 79.37,65.00 70.87,65.00" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="73.50,99.24 82.00,99.24 79.37,91.16 70.87,91.16" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="88.87,25.76 97.37,25.76 94.75,17.67 86.25,17.67" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="95.75,46.92 104.25,46.92 101.62,38.84 93.12,38.84" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="95.75,73.08 104.25,73.08 101.62,65.00 93.12,65.00" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="88.87,94.24 97.37,94.24 94.75,86.16 86.25,86.16" fill="#DBB777" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="120.63,38.84 129.13,38.84 126.50,30.75 118.00,30.75" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="113.75,60.00 122.25,60.00 119.63,51.92 111.13,51.92" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="113.75,86.16 122.25,86.16 119.63,78.08 111.13,78.08" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="108.50,86.16 111.13,78.08 104.25,73.08 101.62,81.16" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="86.25,86.16 88.87,78.08 82.00,73.08 79.37,81.16" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="68.24,73.08 70.87,65.00 63.99,60.00 61.37,68.08" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="118.00,73.08 120.63,65.00 113.75,60.00 111.13,68.08" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,65.00 95.75,56.91 88.87,51.92 86.25,60.00" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="77.75,60.00 80.37,51.92 73.50,46.92 70.87,55.00" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="52.87,51.92 55.49,43.83 48.62,38.84 45.99,46.92" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="133.38,51.92 136.01,43.83 129.13,38.84 126.50,46.92" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,51.92 113.75,43.83 106.88,38.84 104.25,46.92" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,38.84 95.75,30.75 88.87,25.76 86.25,33.84" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="68.24,30.75 70.87,22.67 63.99,17.67 61.37,25.76" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="86.25,102.33 88.87,94.24 82.00,99.24 79.37,107.32" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,81.16 95.75,73.08 88.87,78.08 86.25,86.16" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="61.37,68.08 63.99,60.00 57.12,65.00 54.49,73.08" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,68.08 113.75,60.00 106.88,65.00 104.25,73.08" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,55.00 73.50,46.92 66.62,51.92 63.99,60.00" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="126.50,46.92 129.13,38.84 122.25,43.83 119.63,51.92" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="86.25,33.84 88.87,25.76 82.00,30.75 79.37,38.84" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,81.16 73.50,73.08 70.87,65.00 68.24,73.08" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,94.24 113.75,86.16 111.13,78.08 108.50,86.16" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="63.99,60.00 66.62,51.92 63.99,43.83 61.37,51.92" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="104.25,73.08 106.88,65.00 104.25,56.91 101.62,65.00" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,38.84 73.50,30.75 70.87,22.67 68.24,30.75" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="104.25,46.92 106.88,38.84 104.25,30.75 101.62,38.84" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="133.38,51.92 126.50,46.92 119.63,51.92 126.50,56.91" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="118.00,73.08 111.13,68.08 104.25,73.08 111.13,78.08" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,94.24 104.25,89.25 97.37,94.24 104.25,99.24" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="118.00,30.75 111.13,25.76 104.25,30.75 111.13,35.75" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,51.92 104.25,46.92 97.37,51.92 104.25,56.91" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="95.75,73.08 88.87,68.08 82.00,73.08 88.87,78.08" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="77.75,86.16 70.87,81.16 63.99,86.16 70.87,91.16" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="108.50,17.67 101.62,12.68 94.75,17.67 101.62,22.67" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,38.84 86.25,33.84 79.37,38.84 86.25,43.83" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="77.75,60.00 70.87,55.00 63.99,60.00 70.87,65.00" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="68.24,73.08 61.37,68.08 54.49,73.08 61.37,78.08" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,38.84 63.99,33.84 57.12,38.84 63.99,43.83" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="126.50,56.91 119.63,51.92 122.25,60.00 129.13,65.00" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="108.50,86.16 101.62,81.16 104.25,89.25 111.13,94.24" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,35.75 104.25,30.75 106.88,38.84 113.75,43.83" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,65.00 86.25,60.00 88.87,68.08 95.75,73.08" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="101.62,22.67 94.75,17.67 97.37,25.76 104.25,30.75" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="86.25,43.83 79.37,38.84 82.00,46.92 88.87,51.92" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="61.37,78.08 54.49,73.08 57.12,81.16 63.99,86.16" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="68.24,30.75 61.37,25.76 63.99,33.84 70.87,38.84" fill="#DFE9DA" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="108.50,17.67 101.62,22.67 104.25,30.75 111.13,25.76" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="118.00,30.75 111.13,35.75 113.75,43.83 120.63,38.84" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="133.38,51.92 126.50,56.91 129.13,65.00 136.01,60.00" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="86.25,17.67 79.37,22.67 82.00,30.75 88.87,25.76" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="93.12,38.84 86.25,43.83 88.87,51.92 95.75,46.92" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="111.13,51.92 104.25,56.91 106.88,65.00 113.75,60.00" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="126.50,73.08 119.63,78.08 122.25,86.16 129.13,81.16" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="70.87,38.84 63.99,43.83 66.62,51.92 73.50,46.92" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="86.25,60.00 79.37,65.00 82.00,73.08 88.87,68.08" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="101.62,81.16 94.75,86.16 97.37,94.24 104.25,89.25" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="68.24,73.08 61.37,78.08 63.99,86.16 70.87,81.16" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+<polygon points="86.25,86.16 79.37,91.16 82.00,99.24 88.87,94.24" fill="#9CBDA3" stroke="#6B806D" stroke-width=".35"/>
+</svg>
         <h3>Penrose tiling explorer</h3>
-        <p>Two rhombi, five-fold symmetry, and a pattern that never repeats. Generated live by subdividing Robinson triangles. Sliders for depth, zoom, rotation, and color.</p>
-        <span class="go">Open the explorer →</span>
+        <p>Find the hidden grid behind a Penrose tiling. Follow its ribbons, shift the pattern, and explore up to 17 directions.</p>
+        <span class="go">Explore tilings →</span>
       </a>
 
       <a class="card card-link" href="life.html">
@@ -114,49 +201,21 @@
           </g>
         </svg>
         <h3>Game of Life lab</h3>
-        <p>Conway's classic plus its stranger cousins: HighLife, Seeds, Day &amp; Night, or your own custom rule. Draw, drop in famous patterns, and watch.</p>
-        <span class="go">Open the lab →</span>
-      </a>
-
-      <a class="card card-link" href="golf.html">
-        <svg class="thumb" viewBox="0 0 200 120" role="img" aria-label="Life Golf preview">
-          <rect width="200" height="120" fill="#F1EEE7"/>
-          <rect x="12" y="16" width="44" height="88" rx="6" fill="#E9EEFB"/>
-          <rect x="148" y="40" width="40" height="40" rx="6" fill="#F7EFDC" stroke="#B8860B" stroke-width="1.5"/>
-          <g fill="#2B59C3">
-            <rect x="26" y="46" width="10" height="10" rx="2"/>
-            <rect x="36" y="56" width="10" height="10" rx="2"/>
-            <rect x="16" y="66" width="10" height="10" rx="2"/>
-            <rect x="26" y="66" width="10" height="10" rx="2"/>
-            <rect x="36" y="66" width="10" height="10" rx="2"/>
-          </g>
-          <path d="M166 74 L166 50 L182 56 L166 62" fill="#B8860B"/>
-          <g fill="#9096A0" opacity=".55">
-            <rect x="96" y="30" width="10" height="10" rx="2"/>
-            <rect x="106" y="30" width="10" height="10" rx="2"/>
-            <rect x="96" y="40" width="10" height="10" rx="2"/>
-            <rect x="106" y="40" width="10" height="10" rx="2"/>
-          </g>
-        </svg>
-        <h3>Life Golf</h3>
-        <p>A puzzle game running on the same Life engine: seed a few cells, press launch, and get a signal to the green in as few cells as possible.</p>
-        <span class="go">Play a round →</span>
+        <p>Draw a pattern, run the simulation, or change the rules. Includes Conway’s Life, HighLife, Seeds, and Day &amp; Night.</p>
+        <span class="go">Run the simulation →</span>
       </a>
 
     </div>
   </section>
 
-  <section>
-    <p class="small muted">All of these are plain JavaScript on a &lt;canvas&gt;. View source to see how they work. The two research demos share a model file that the site's test suite checks on every build: the Kok sequence has to peak on flash three, the populations have to stay normalized, and the Total Variation matching has to land within two percent. Fun is not an excuse for unverified math.</p>
-  </section>
+
 
 </main>
 
 <footer class="site-foot">
-  <div class="wrap-wide foot-row">
+  <div class="wrap foot-row">
     <span>© 2026 Nicholas Ferrari</span>
-    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
-    <span>Hand-built with plain HTML · <a href="https://github.com/nickyferrari/nickyferrari.github.io">source</a></span>
+    <div class="footer-links"><a href="mailto:nickferrari95@gmail.com">Email</a><a href="https://github.com/nickyferrari">GitHub</a><a href="../cv.html">CV</a></div>
   </div>
 </footer>
 

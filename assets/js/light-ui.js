@@ -58,7 +58,7 @@
 
     var warn = document.getElementById('e-warn');
     if (data.stats.gridLimited) {
-      warn.textContent = 'The square wave has hit the update grid — it cannot flip fast enough to match this much noise. Raise the amplitude or lower σ.';
+      warn.textContent = 'The update rate limits the TV match at these settings. Increase the square-wave amplitude or reduce the stochastic spread (σ).';
       warn.classList.remove('hidden');
     } else {
       warn.classList.add('hidden');

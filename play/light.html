@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Designing a light environment — Nicholas Ferrari</title>
+<title>Light environments — Nicholas Ferrari</title>
 <meta name="description" content="Interactive demo: matching the Total Variation of a periodic square-wave light environment to a stochastic one, so temporal pattern can be separated from photon dose.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
-<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head">
   <nav class="nav wrap-wide" aria-label="Main">
@@ -22,17 +23,17 @@
       <a href="../publications.html">Publications</a>
       <a href="../cv.html">CV</a>
       <a href="../teaching.html">Teaching</a>
-      <a class="play-link" href="index.html" aria-current="page">Play</a>
+      <a class="play-link" href="index.html" aria-current="page">Interactive</a>
       <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
     </div>
   </nav>
 </header>
 
-<main class="wrap-wide">
+<main class="wrap-wide" id="main">
 
   <div class="page-head">
-    <h1>Designing a light environment</h1>
-    <p class="lede">Algae in a turbulent water column and leaves under a moving canopy never see constant light. But "fluctuating light" is not one treatment. A regular flicker and an unpredictable one can deliver <em>identical</em> average irradiance and total photon dose while being completely different environments to acclimate to. To ask whether unpredictability itself carries a cost, you first have to control everything else. This is the design I use to do that.</p>
+    <h1>Light environments</h1>
+    <p class="lede">Compare a stochastic light sequence with a periodic square wave. Adjust intensity and variability to explore an experimental design for studying responses to unpredictable light.</p>
   </div>
 
   <div class="demo">
@@ -68,8 +69,8 @@
           </select>
         </label>
         <div class="btn-row">
-          <button class="btn" id="e-reseed" type="button">New noise draw</button>
-          <button class="btn" id="e-png" type="button">PNG</button>
+          <button class="btn" id="e-reseed" type="button">Generate new sequence</button>
+          <button class="btn" id="e-png" type="button">Download PNG</button>
         </div>
       </fieldset>
 
@@ -78,7 +79,7 @@
         <p class="eq">TV = Σ |I(t+1) − I(t)|
 E[TV] = (n−1) · 2σ/√π
 k transitions = TV / 2A</p>
-        <p class="small faint" style="margin:8px 0 0">Total Variation measures how much the light <em>moves</em>, independent of where it sits. Match it, and the only thing left different is the pattern.</p>
+        <p class="small faint">Total variation (TV) sums the absolute changes in intensity. The periodic sequence targets the stochastic sequence’s TV; the match is approximate because transitions occur at discrete time steps.</p>
       </fieldset>
     </aside>
 
@@ -99,10 +100,10 @@ k transitions = TV / 2A</p>
 
       <p class="stage-note" id="e-warn" style="color:var(--danger)"></p>
 
-      <p class="stage-note">Intensity updates every 15 s, the real update interval of the multicultivator these protocols run on. Drag σ up and watch the square wave flip faster to keep pace: the two environments stay matched in mean, in dose, and in total movement, and differ only in whether the next change is predictable. That last difference is what my dissertation is about.</p>
+      <p class="stage-note">Light intensity updates every 15 seconds, matching the multicultivator used in my experiments. Increasing σ generally requires more square-wave transitions. Check the readouts for differences in mean intensity, photon dose, and TV: finite sampling, clipping at zero, and the update rate can limit the match.</p>
 
       <details class="table-view">
-        <summary>View the underlying numbers</summary>
+        <summary>View data table</summary>
         <div id="e-table"></div>
       </details>
     </div>
@@ -111,10 +112,9 @@ k transitions = TV / 2A</p>
 </main>
 
 <footer class="site-foot">
-  <div class="wrap-wide foot-row">
+  <div class="wrap foot-row">
     <span>© 2026 Nicholas Ferrari</span>
-    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
-    <span>Hand-built with plain HTML · <a href="https://github.com/nickyferrari/nickyferrari.github.io">source</a></span>
+    <div class="footer-links"><a href="mailto:nickferrari95@gmail.com">Email</a><a href="https://github.com/nickyferrari">GitHub</a><a href="../cv.html">CV</a></div>
   </div>
 </footer>
 

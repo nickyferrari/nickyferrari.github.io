@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
-<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head">
   <nav class="nav wrap-wide" aria-label="Main">
@@ -22,17 +23,17 @@
       <a href="../publications.html">Publications</a>
       <a href="../cv.html">CV</a>
       <a href="../teaching.html">Teaching</a>
-      <a class="play-link" href="index.html" aria-current="page">Play</a>
+      <a class="play-link" href="index.html" aria-current="page">Interactive</a>
       <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
     </div>
   </nav>
 </header>
 
-<main class="wrap-wide">
+<main class="wrap-wide" id="main">
 
   <div class="page-head">
     <h1>Game of Life lab</h1>
-    <p class="lede">Conway's Game of Life (1970) runs on four rules about how many neighbors a cell has, listed in full under the grid. Yet it contains gliders, guns, and universal computers. Draw on the grid, drop in a famous pattern, or change the rules themselves and watch a different universe unfold. The board starts loaded with a <em>Gosper glider gun</em>: press Run.</p>
+    <p class="lede">Build patterns from simple rules for cell birth and survival. Start with the Gosper glider gun, draw your own cells, or choose a different rule set.</p>
   </div>
 
   <div class="demo">
@@ -76,7 +77,7 @@
         <div class="bs-grid" id="l-b-grid"></div>
         <p class="bs-name">Survives with n neighbors</p>
         <div class="bs-grid" id="l-s-grid"></div>
-        <p class="small faint" style="margin:8px 0 0">Try HighLife's replicator, or Seeds for fireworks.</p>
+        <p class="small faint" style="margin:8px 0 0">Try HighLife with a replicator, or explore the Seeds rule.</p>
       </fieldset>
     </aside>
 
@@ -86,31 +87,30 @@
         <span id="l-gen">gen 0</span>
         <span id="l-pop">pop 0</span>
         <span id="l-rule-out">B3/S23</span>
-        <span>draw with your mouse</span>
+        <span>drag to draw cells</span>
       </div>
       <div class="rules-box">
-        <h3>The rules, in full</h3>
-        <p>Every cell looks at its eight neighbors, and all cells update at once:</p>
+        <h3>Conway’s rules</h3>
+        <p>Each generation updates all cells at once, using their eight nearest neighbors:</p>
         <ol class="rules">
-          <li>A live cell with fewer than two live neighbors dies. <span class="term">(underpopulation)</span></li>
-          <li>A live cell with two or three live neighbors survives to the next generation.</li>
-          <li>A live cell with more than three live neighbors dies. <span class="term">(overpopulation)</span></li>
-          <li>A dead cell with exactly three live neighbors becomes live. <span class="term">(reproduction)</span></li>
+          <li>Fewer than two live neighbors: a live cell dies. <span class="term">(underpopulation)</span></li>
+          <li>Two or three live neighbors: a live cell survives.</li>
+          <li>More than three live neighbors: a live cell dies. <span class="term">(overpopulation)</span></li>
+          <li>Exactly three live neighbors: a dead cell becomes alive. <span class="term">(reproduction)</span></li>
         </ol>
-        <p style="margin:12px 0 0">Rules 2 and 4 are the whole thing: survive on 2 or 3, born on exactly 3. That is what <strong>B3/S23</strong> in the readout means, and it is why the rule editor in the panel only needs two rows of checkboxes. Every variant in the preset menu is the same four rules with different numbers in them.</p>
+        <p style="margin:12px 0 0"><strong>B3/S23</strong> means birth with three neighbors and survival with two or three. Use the rule editor to change those counts and explore other cellular automata.</p>
       </div>
 
-      <p class="stage-note">Cells are tinted by age: bright blue for newborns, fading toward ink as they survive. The gun fires a glider every 30 generations. On a wrapping board its own gliders will eventually come back around and destroy it, which feels like a metaphor for something.</p>
+      <p class="stage-note">Cell color indicates age. The Gosper gun emits a glider every 30 generations. With edge wrapping enabled, returning gliders can eventually collide with the gun.</p>
     </div>
   </div>
 
 </main>
 
 <footer class="site-foot">
-  <div class="wrap-wide foot-row">
+  <div class="wrap foot-row">
     <span>© 2026 Nicholas Ferrari</span>
-    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
-    <span>Hand-built with plain HTML · <a href="https://github.com/nickyferrari/nickyferrari.github.io">source</a></span>
+    <div class="footer-links"><a href="mailto:nickferrari95@gmail.com">Email</a><a href="https://github.com/nickyferrari">GitHub</a><a href="../cv.html">CV</a></div>
   </div>
 </footer>
 

@@ -1,141 +1,97 @@
-# nickferrari95.github.io — research website
+# Nicholas Ferrari — personal website
 
-A fast, dependency-free personal academic site: plain HTML, CSS, and JavaScript.
-No build step, no framework, nothing to keep updated. Every file here is exactly
-what gets served.
+A static website for a broad personal audience, with research, teaching, a CV,
+and interactive experiments. Built with HTML, CSS, and JavaScript; no build step
+or dependencies are required.
 
-Content is drawn from your CV drafts, cover letters, and scientific-interest
-statements in `job_search/`. Everything that still needs your input is marked
-with an `<!-- EDIT: ... -->` comment in the HTML — see **Before you publish**.
+- Live website: https://nickyferrari.github.io/
+- Source: https://github.com/nickyferrari/nickyferrari.github.io
+- Local redesign branch: `codex/minimal-redesign`
 
-```
-├── index.html            About + research interests + news
-├── publications.html     5 papers, 1 in prep, 4 conference presentations
-├── cv.html               Full CV, print-friendly (Print / save as PDF button)
-├── teaching.html         Courses, mentoring, outreach, contact
-├── 404.html              Self-contained fun 404 (tiny Game of Life inside)
-├── play/
-│   ├── index.html        Playground landing page
-│   ├── light.html        Designing a light environment  ← your dissertation
-│   ├── kok.html          The Kok clock                  ← your Plants (2026) paper
-│   ├── penrose.html      Penrose tiling explorer
-│   ├── life.html         Game of Life lab
-│   └── golf.html         Life Golf — 5-hole puzzle game
-├── assets/
-│   ├── css/style.css        Whole design system (colors/fonts in :root tokens)
-│   ├── js/photosynthesis.js Kok model + Total-Variation light environments
-│   ├── js/plot.js           Tiny canvas plotting helper
-│   ├── js/life-engine.js    Cellular-automaton engine (browser + Node)
-│   ├── js/patterns.js       Famous Life patterns + geometry helpers
-│   ├── js/golf-levels.js    Life Golf level definitions
-│   ├── js/*-ui.js           Page logic for each demo
-│   ├── favicon.svg          Two light environments over one window
-│   └── portrait.svg         Placeholder — replace with your photo
-└── tests/
-    ├── run-tests.js      Everything; run this
-    ├── test-science.js   Kok model + light environment checks
-    ├── golf-solver.js    Brute-force solver proving each golf hole is winnable
-    └── probe.js          ASCII visualizer for debugging golf levels
+## Preview
+
+From this folder:
+
+```sh
+python -m http.server 8765 --bind 127.0.0.1
 ```
 
-## Preview locally
+Open http://127.0.0.1:8765/. The `.preview/` directory is ignored by Git and holds
+local working files and server logs only.
 
-```bash
-python3 -m http.server 8000     # then visit http://localhost:8000
-```
+## Pages
 
-## Before you publish
+- `index.html`: introduction, background, research summaries, and links to experiments.
+- `publications.html`: papers, work in preparation, and conference presentations.
+- `cv.html`: education, experience, teaching, service, methods, and coursework.
+- `teaching.html`: courses, mentoring, outreach, and contact.
+- `play/index.html`: interactive collection.
+- `play/light.html`, `play/kok.html`: photosynthesis demonstrations.
+- `play/penrose.html`, `play/life.html`: mathematical experiments.
+- `404.html`: self-contained missing-page screen for GitHub Pages.
 
-Small list, all quick:
+The shared appearance lives in `assets/css/style.css`. Each page includes its
+own navigation and footer; update those consistently when changing navigation.
+The light theme is the default, and the theme button saves a visitor’s preference.
+The CV has a print stylesheet and a “Print or save PDF” button.
 
-| # | What | Where |
-|---|------|-------|
-| 1 | **Photo** — save as `assets/me.jpg`, point the `<img>` at it | `index.html` hero |
-| 2 | **Profile links** — Google Scholar, ORCID, GitHub, LinkedIn are placeholder URLs | `index.html`, `teaching.html`, `publications.html` |
-| 3 | **DOIs / PDFs** on the publications page are placeholder `#` links | `publications.html` |
-| 4 | **Footer "source" link** — points at `github.com/yourusername/...` | all pages |
-| 5 | **News dates** — add your defense date and next position when ready | `index.html` |
-| 6 | **Teaching philosophy** — I drafted a paragraph from your materials; rewrite in your voice | `teaching.html` |
-| 7 | **References section** on the CV — trim to "available on request" if you prefer | `cv.html` |
+## Content review
 
-Two deliberate choices worth knowing about: your **phone number is not on the
-site** (email only — public pages get scraped), and the CV page is styled for
-printing rather than linking a PDF, so "Print / save as PDF" produces a clean
-document. If you'd rather link your formatted `.docx`-derived PDF, drop it at
-`assets/cv.pdf` and there's a commented-out button in `cv.html` ready to go.
+The redesign retains the existing site’s credentials, dates, publication titles,
+and research record. Before publishing, confirm:
 
-## Deploy to GitHub Pages (free hosting)
+1. The Ph.D. completion year and any current affiliation or role to add.
+2. Whether the manuscript marked “in preparation” has changed status.
+3. Whether the 2025–2026 mentoring and service descriptions are still current.
+4. Any personal interests or projects to add beyond the existing research and games.
 
-### Option A — all in the browser, ~3 minutes
+Generic Scholar, ORCID, and LinkedIn home-page links were removed. Add actual
+profile URLs when available. A portrait is optional; the new design does not
+require one. No private credentials are needed for editing the local files.
 
-1. Sign in at github.com → **+** (top right) → **New repository**.
-2. Name it **exactly** `YOURUSERNAME.github.io`, keep it Public, **Create repository**.
-3. On the new repo page, click the **"uploading an existing file"** link.
-4. Drag the **contents** of this folder in — in Chrome or Edge you can drag the
-   folders (`play/`, `assets/`, `tests/`) and they upload with structure intact.
-   Make sure `index.html` lands at the top level, not inside a subfolder.
-5. **Commit changes.** A minute or two later the site is live at
-   `https://YOURUSERNAME.github.io`
+The five paper links were checked against Crossref’s publisher-deposited records:
 
-### Option B — with git
+- https://doi.org/10.3390/plants15040625
+- https://doi.org/10.1093/plphys/kiag048
+- https://doi.org/10.1111/gcb.17595
+- https://doi.org/10.3390/plants13060811
+- https://doi.org/10.3791/63801
 
-```bash
-cd path/to/this/folder
-git init
-git add .
-git commit -m "Research website"
-git branch -M main
-git remote add origin https://github.com/YOURUSERNAME/YOURUSERNAME.github.io.git
-git push -u origin main
-```
+## Checks
 
-### Variant: a project repo instead
-
-Push to any repo, then **Settings → Pages → Deploy from a branch**, pick `main` /
-`(root)`. The site appears at `https://YOURUSERNAME.github.io/REPONAME/`. All
-links here are relative, so both setups work unchanged. A custom domain can be
-attached later under **Settings → Pages**.
-
-## The Playground
-
-Two demos are your research:
-
-- **Designing a light environment** (`play/light.html`) — the Total-Variation
-  matching from your dissertation, live. Sliders for µ, σ, square-wave amplitude,
-  and window length; the square wave's flip count is recomputed to match the
-  realized TV of the stochastic draw, and the readouts show mean irradiance,
-  photon dose, and TV for both so you can watch them stay matched while the
-  *pattern* diverges.
-- **The Kok clock** (`play/kok.html`) — the S-state cycle with miss and
-  double-hit probabilities, dark-adapted S₁/S₀ ratio, live S-state populations,
-  and the period-two acceptor component superimposed on the period-four donor
-  signal. The stage note points at your *Plants* (2026) paper for the EWT
-  separation. The period-two trace is labeled on the page as a schematic stand-in,
-  not a full Q_A/Q_B simulation — worth keeping that caveat if you edit the copy.
-
-And three for fun, per your original request: the Penrose tiling explorer, the
-Game of Life lab (HighLife, Seeds, Day & Night, or any custom B/S rule), and
-**Life Golf**, a five-hole puzzle game on the same Life engine.
-
-## Tests
-
-```bash
+```sh
 node tests/run-tests.js
 ```
 
-No dependencies, ~2 seconds. It verifies:
+The tests cover the cellular-automaton engine, multigrid geometry, ribbon
+continuity, the Kok model, and light-environment matching. After visual changes,
+also check the pages at desktop and mobile widths, the theme toggle, the CV’s
+print layout, and the interactive controls.
 
-- **The Life engine** — glider and LWSS headings and speeds, oscillator periods
-  (blinker 2, pulsar 3, pentadecathlon 15), the Gosper gun, toroidal wrapping,
-  and the Seeds rule.
-- **Life Golf** — brute-forces every hole to prove a winning line exists within
-  budget, and that an empty board can't accidentally win.
-- **The science models** — S-state populations stay normalized, no O₂ on flash 1,
-  the yield peaks on flash 3 with period-4 recurrences at 7 and 11, a lossless
-  cycle stays undamped forever, populations converge to 0.25 each under misses,
-  the E[TV] = (n−1)·2σ/√π closed form matches a 200,000-step simulation to within
-  1%, and matched pairs land within 2% on TV and 5% on dose.
+The light demonstration approximates matching on a finite update grid; its
+readouts show the achieved dose and total variation. The Kok demonstration’s
+period-two component is schematic, not a complete acceptor-side model.
 
-If you add a golf hole or change a model, run this before you push — several
-checks exist specifically to catch a plausible-looking change that breaks the
-physics.
+The tiling explorer uses de Bruijn's multigrid dual construction, implemented in
+`assets/js/penrose-model.js`. Five line directions with regular zero-sum offsets
+produce Penrose rhombi; the other odd counts from 7 through 17 produce related
+multigrid tilings. The pattern-shift control changes an internal Fourier mode of
+the offsets while preserving their sum. Counts refer to the finite patch, not
+the infinite tiling. Its linked grid and tiling views share one geometry model.
+
+The controls include ribbon selection, patch size, color by shape or orientation,
+view selection, zoom, rotation, new arrangements, and PNG/SVG exports. Hover or
+tap either canvas to follow a ribbon; the selectors and canvas arrow keys offer
+keyboard equivalents. With the canvas focused, Shift plus an arrow changes the
+direction, and Escape clears the highlight.
+
+References: [MinutePhysics](https://www.youtube.com/watch?v=-eqdj63nEr4) and
+[Andrejs Treibergs' construction notes](https://www.math.utah.edu/~treiberg/PenroseSlides.pdf).
+
+## Publishing
+
+These changes are local until pushed to GitHub. Publishing requires a GitHub
+session or Git credentials with write access to the source repository. Review
+the draft, commit the changes on the redesign branch, and merge through the
+repository’s normal workflow. Confirm the branch configured under GitHub Pages
+before merging. No hosting migration is required.

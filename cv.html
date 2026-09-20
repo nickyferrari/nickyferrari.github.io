@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head">
   <nav class="nav wrap" aria-label="Main">
@@ -22,30 +23,26 @@
       <a href="publications.html">Publications</a>
       <a href="cv.html" aria-current="page">CV</a>
       <a href="teaching.html">Teaching</a>
-      <a class="play-link" href="play/index.html">Play</a>
+      <a class="play-link" href="play/index.html">Interactive</a>
       <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
     </div>
   </nav>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main">
 
   <div class="page-head">
     <h1>Curriculum vitae</h1>
-    <p class="lede no-print">Baton Rouge, LA · <a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a>
-      <br><button class="btn small" type="button" onclick="window.print()" style="margin-top:8px">Print / save as PDF</button>
-      <!-- EDIT: to link your formatted PDF instead, put it at assets/cv.pdf and use:
-           <a class="btn small" href="assets/cv.pdf">Download PDF</a>
-           (Your phone number is deliberately left off this public page.) -->
-    </p>
+    <p class="lede">Nicholas Ferrari · <a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></p>
+    <button class="btn small no-print" type="button" onclick="window.print()">Print or save PDF</button>
   </div>
 
   <section>
-    <p class="section-label">Education</p>
+    <h2 class="section-label">Education</h2>
     <div class="cv-item">
       <div class="cv-when">2020 – 2026</div>
       <div class="cv-what"><strong>Ph.D. in Biochemistry</strong> (Minor: Mathematics), Louisiana State University<br>
-        <span class="sub">Advisor: Dr. David J. Vinyard · Dissertation research on the regulation of photosynthetic electron transport under dynamic and stochastic light in <em>Chlamydomonas reinhardtii</em></span></div>
+        <span class="sub">Advisor: David J. Vinyard. Studied photosynthetic electron transport in <em>Chlamydomonas reinhardtii</em> under changing and stochastic light.</span></div>
     </div>
     <div class="cv-item">
       <div class="cv-when">2018</div>
@@ -54,18 +51,18 @@
   </section>
 
   <section>
-    <p class="section-label">Research experience</p>
+    <h2 class="section-label">Research experience</h2>
 
     <div class="cv-item">
       <div class="cv-when">2022 – 2026</div>
       <div class="cv-what"><strong>Graduate Research Assistant</strong> — Vinyard Lab, LSU Biological Sciences
         <ul>
-          <li><strong>Biophysics &amp; spectroscopy:</strong> built an Empirical Wavelet Transform pipeline (Python/MATLAB) to decompose flash-induced fluorescence transients and separate the parallel S-state cycles of PSII. Ran JTS-150 pump-probe spectroscopy, P700 absorption, and OJIP fast fluorescence transients.</li>
-          <li><strong>Instrumentation:</strong> designed and built an Arduino/Teensy-controlled LED flash lamp (C++, custom PCB with MOSFET gate drivers) delivering sub-millisecond saturating pulses. Reprogrammed PSI MC-1000 multicultivators in JavaScript to execute Total-Variation-matched stochastic and periodic light environments across eight parallel cultures.</li>
-          <li><strong>Hardware design:</strong> parametric CAD in Fusion 360 for optical mounts, cuvette holders, and detector housings, fabricated by FDM 3D printing.</li>
-          <li><strong>Algal physiology:</strong> maintained and characterized <em>C. reinhardtii</em> mutants under dynamic light in programmable growth chambers, optimizing acclimation protocols for fluorescence phenotyping.</li>
-          <li><strong>Bioinformatics:</strong> screened 3,618 photosynthetic bacterial genomes for PSII assembly factors via a PostgreSQL + Python/Biopython TBLASTN pipeline on an HPC cluster, with a weighted scoring metric combining sequence similarity and predicted structural features.</li>
-          <li><strong>Machine learning:</strong> developed an image-analysis pipeline to segment and quantify starch granules in microscopy images.</li>
+          <li>Developed Python and MATLAB pipelines using the Empirical Wavelet Transform to separate overlapping PSII signals. Measured reaction kinetics with pump-probe spectroscopy, P700 absorption, and fast fluorescence transients.</li>
+          <li>Built a microcontroller-driven LED flash system with custom circuitry for sub-millisecond saturating pulses. Programmed eight-culture multicultivators to deliver periodic and stochastic light matched for total variation.</li>
+          <li>Designed and 3D-printed optical mounts, cuvette holders, and detector housings using parametric CAD.</li>
+          <li>Characterized <em>C. reinhardtii</em> mutants under dynamic light and developed acclimation protocols for fluorescence measurements.</li>
+          <li>Screened 3,618 photosynthetic bacterial genomes for PSII assembly factors using Python, Biopython, PostgreSQL, and high-performance computing.</li>
+          <li>Developed a machine-learning pipeline to identify and quantify starch granules in microscopy images.</li>
         </ul>
       </div>
     </div>
@@ -74,9 +71,9 @@
       <div class="cv-when">2020 – 2022</div>
       <div class="cv-what"><strong>Graduate Research Assistant</strong> — South Lab, LSU Biological Sciences
         <ul>
-          <li>Characterized photosynthetic performance of <em>Arabidopsis thaliana</em> photorespiratory mutants by PAM fluorometry (FluorCam 800-C) and simultaneous gas exchange (LI-COR 6800) under drought, heat, and fluctuating light. Completed LI-COR's week-long course on gas exchange theory and instrument energy-balance models.</li>
-          <li>Quantified transcriptional regulation of photorespiratory bypass genes under abiotic stress by qPCR and cDNA library construction.</li>
-          <li>Modeled genotype × environment interactions and stress-induced flowering acceleration using multivariate statistics in R.</li>
+          <li>Measured photosynthesis in <em>Arabidopsis thaliana</em> photorespiratory mutants under drought, heat, and fluctuating light using fluorescence imaging and gas exchange. Completed LI-COR training in gas exchange theory and instrument models.</li>
+          <li>Measured expression of photorespiratory bypass genes under stress using qPCR and cDNA libraries.</li>
+          <li>Analyzed genotype–environment interactions and stress-induced flowering with multivariate models in R.</li>
         </ul>
       </div>
     </div>
@@ -85,10 +82,10 @@
       <div class="cv-when">2018 – 2020</div>
       <div class="cv-what"><strong>Research Assistant</strong> — Ort Lab, UIUC Institute for Genomic Biology (RIPE project)
         <ul>
-          <li>Managed transgenic <em>Nicotiana tabacum</em> and <em>Solanum tuberosum</em> field plots, greenhouses, and growth chambers under USDA-APHIS compliance. Ran field-scale and controlled-environment gas exchange measurements.</li>
-          <li>Performed high-throughput Gibson Assembly and Golden Gate cloning, RNA extraction, and cDNA library construction. Conducted virus-induced gene silencing in <em>N. benthamiana</em>.</li>
-          <li>Ran carbon/nitrogen elemental analysis (Velp CN-802) and established sample-preparation protocols.</li>
-          <li>Trained and supervised five undergraduate assistants in molecular protocols and greenhouse safety.</li>
+          <li>Managed transgenic tobacco and potato field trials, greenhouses, and growth chambers for the RIPE project under USDA-APHIS requirements. Collected gas exchange measurements in field and controlled conditions.</li>
+          <li>Performed Gibson and Golden Gate cloning, RNA extraction, cDNA library preparation, and virus-induced gene silencing.</li>
+          <li>Established sample-preparation methods and measured carbon and nitrogen content with elemental analysis.</li>
+          <li>Supervised five undergraduate assistants, with training in molecular methods and greenhouse safety.</li>
         </ul>
       </div>
     </div>
@@ -96,17 +93,17 @@
     <div class="cv-item">
       <div class="cv-when">2016 – 2017</div>
       <div class="cv-what"><strong>Undergraduate Research Assistant</strong> — Crofts Lab, UIUC Biophysics<br>
-        <span class="sub">Purified cytochrome <em>bc</em><sub>1</sub> complexes and reconstituted them into synthetic nanodiscs to study electron transport kinetics.</span></div>
+        <span class="sub">Studied electron transport kinetics by purifying cytochrome <em>bc</em><sub>1</sub> and incorporating the complexes into synthetic nanodiscs.</span></div>
     </div>
   </section>
 
   <section>
-    <p class="section-label">Publications &amp; presentations</p>
-    <p class="muted">Five publications and four conference presentations. See the <a href="publications.html">publications page</a> for the full list.</p>
+    <h2 class="section-label">Publications &amp; presentations</h2>
+    <p class="muted">Read the <a href="publications.html">publication and presentation record</a>.</p>
   </section>
 
   <section>
-    <p class="section-label">Honors &amp; awards</p>
+    <h2 class="section-label">Honors &amp; awards</h2>
     <div class="cv-item">
       <div class="cv-when">2025</div>
       <div class="cv-what"><strong>Dr. Xiulu Ruan Superior Graduate Student Scholarship</strong>, LSU</div>
@@ -118,8 +115,8 @@
   </section>
 
   <section>
-    <p class="section-label">Teaching</p>
-    <p class="muted">Full detail on the <a href="teaching.html">teaching page</a>.</p>
+    <h2 class="section-label">Teaching</h2>
+    <p class="muted">See <a href="teaching.html">teaching and mentoring</a> for course descriptions.</p>
     <div class="cv-item">
       <div class="cv-when">Fall 2022</div>
       <div class="cv-what"><strong>Plant Physiology Lab (BIOL 3060)</strong>, LSU — Instructor of record</div>
@@ -139,7 +136,7 @@
   </section>
 
   <section>
-    <p class="section-label">Service, leadership &amp; outreach</p>
+    <h2 class="section-label">Service, leadership &amp; outreach</h2>
     <div class="cv-item">
       <div class="cv-when">2023</div>
       <div class="cv-what">Student representative, Biochemistry Faculty Search Committee, LSU Department of Biological Sciences</div>
@@ -171,7 +168,7 @@
   </section>
 
   <section>
-    <p class="section-label">Technical proficiencies</p>
+    <h2 class="section-label">Methods &amp; tools</h2>
     <h3>Computational</h3>
     <p>Python, MATLAB, R, JavaScript, C++, Bash, SQL/PostgreSQL, Biopython, Slurm (HPC), machine learning, image analysis, signal processing, EC-Lab, SnapGene, Geneious Prime.</p>
     <h3>Engineering &amp; design</h3>
@@ -183,7 +180,7 @@
   </section>
 
   <section>
-    <p class="section-label">Selected coursework</p>
+    <h2 class="section-label">Selected coursework</h2>
     <h3>Graduate (LSU)</h3>
     <p>Probability Theory (MATH 7360), Real Analysis I &amp; II (MATH 4031/4032), Graduate Real Analysis (MATH 7311), Advanced Genetics, Nucleic Acids, Proteins, Lipids &amp; Membranes, Plant Molecular Biology, Plant Metabolism.</p>
     <h3>Undergraduate (UIUC)</h3>
@@ -191,12 +188,11 @@
   </section>
 
   <section>
-    <p class="section-label">References</p>
-    <!-- EDIT: many people prefer "available on request" on a public page —
-         delete this section if you'd rather not list contact details. -->
+    <h2 class="section-label">References</h2>
+
     <p><strong>Dr. David J. Vinyard</strong> · doctoral advisor, Department of Biological Sciences, Louisiana State University<br>
     <strong>Dr. James V. Moroney</strong> · Professor, Department of Biological Sciences, Louisiana State University</p>
-    <p class="small muted">Full contact details available on request.</p>
+    <p class="small muted">Contact details provided on request.</p>
   </section>
 
 </main>
@@ -204,8 +200,7 @@
 <footer class="site-foot">
   <div class="wrap foot-row">
     <span>© 2026 Nicholas Ferrari</span>
-    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
-    <span>Hand-built with plain HTML · <a href="https://github.com/nickyferrari/nickyferrari.github.io">source</a></span>
+    <div class="footer-links"><a href="mailto:nickferrari95@gmail.com">Email</a><a href="https://github.com/nickyferrari">GitHub</a><a href="cv.html">CV</a></div>
   </div>
 </footer>
 

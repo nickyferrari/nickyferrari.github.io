@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script>(function(){var t='light';try{t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
+<script>(function(){var t='light';try{t=localStorage.getItem('theme')||'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head">
   <nav class="nav wrap" aria-label="Main">
@@ -22,73 +23,74 @@
       <a href="publications.html">Publications</a>
       <a href="cv.html">CV</a>
       <a href="teaching.html" aria-current="page">Teaching</a>
-      <a class="play-link" href="play/index.html">Play</a>
+      <a class="play-link" href="play/index.html">Interactive</a>
       <button id="theme-toggle" type="button" aria-label="Switch theme">◐</button>
     </div>
   </nav>
 </header>
 
-<main class="wrap">
-
-  <div class="page-head">
-    <h1>Teaching</h1>
-    <!-- EDIT: this is my read of your teaching philosophy from your materials —
-         rewrite it in your own words when you get a chance. -->
-    <p class="lede">Photosynthesis is a good subject to teach because the machinery is invisible and the evidence is not. My aim in a classroom is to get students to the moment where a measurement forces a conclusion. That is the point where a fluorescence trace or an oxygen yield says something that cannot be argued with, and the model has to bend.</p>
+<main class="wrap" id="main">
+<div class="page-head">
+    <p class="eyebrow">Teaching &amp; mentoring</p>
+    <h1>Learning through experiments.</h1>
+    <p class="lede">I help students connect biological mechanisms with evidence: design an experiment, interpret the measurements, and assess what the results support.</p>
   </div>
 
-  <section>
-    <p class="section-label">Courses</p>
-
-    <h3>Plant Physiology Lab (BIOL 3060) · Instructor of record</h3>
-    <p class="muted">Louisiana State University · Fall 2022</p>
-    <p>Full responsibility for the course: syllabus, lectures, lab design, and assessment. Recognized with the department's Luke Botany Award for Outstanding Teaching the following year.</p>
-
-    <h3>General Microbiology · Graduate teaching assistant</h3>
-    <p class="muted">Louisiana State University · Fall 2023, Spring &amp; Fall 2024</p>
-    <p>Led laboratory sections and assessment for a large enrollment course.</p>
-
-    <h3>Plant Physiology · Graduate teaching assistant</h3>
-    <p class="muted">Louisiana State University · Fall 2020, Fall 2021</p>
-    <p>Ran lab sections covering gas exchange, chlorophyll fluorescence, and photosynthetic phenotyping. These sections used much of the same instrumentation I use in my own research.</p>
-
-    <h3>Vector Calculus (MATH 241) · Course grader</h3>
-    <p class="muted">University of Illinois Urbana-Champaign · 2015 – 2016</p>
-  </section>
-
-  <section>
-    <p class="section-label">Mentoring</p>
-    <p>I have mentored undergraduate researchers across the Vinyard, South, and Ort labs, training them in qPCR, gas exchange, molecular cloning, and database scripting, and supervised five undergraduate assistants in molecular protocols and greenhouse safety during the RIPE project.</p>
-    <p>Since 2025 I have also served as a research mentor with the Illinois Science &amp; Technology Coalition, advising high school students on experimental design and scientific writing.</p>
-  </section>
-
-  <section>
-    <p class="section-label">Outreach &amp; service</p>
-    <p>I judge and moderate at LSU Discover Day most years, and have judged plant sciences at the Louisiana Regional Science &amp; Engineering Fair. I have talked about carbon fixation engineering and climate change as a guest interviewee for Harvard Extension School, and about agricultural photosynthesis research on WEFT 90.1 FM. I served as the student representative on a biochemistry faculty search committee in 2023.</p>
-  </section>
-
-  <section id="contact">
-    <p class="section-label">Contact</p>
-    <h2>Get in touch</h2>
-    <p>Email is the best way to reach me: <a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></p>
-    <p class="muted">Baton Rouge, Louisiana</p>
-    <p class="small muted">If you work on photosynthetic regulation, dynamic phenotyping, or instrumentation for either, I would like to hear from you. The same goes if you just want to argue about whether control theory earns its keep in biology.</p>
-    <div class="quick-links">
-      <!-- EDIT: replace with your real profile URLs -->
-      <a class="pill" href="https://scholar.google.com">Google Scholar</a>
-      <a class="pill" href="https://orcid.org">ORCID</a>
-      <a class="pill" href="https://github.com/nickyferrari">GitHub</a>
-      <a class="pill" href="https://www.linkedin.com">LinkedIn</a>
+  <section class="section-row" aria-labelledby="courses-title">
+    <h2 class="section-label" id="courses-title">Courses</h2>
+    <div class="section-body course-list">
+      <article>
+        <h3>Plant Physiology Lab</h3>
+        <p class="entry-meta">Instructor of record · LSU · Fall 2022</p>
+        <p>I developed the syllabus, lectures, laboratory exercises, and assessments for BIOL 3060. This work was recognized with LSU’s Luke Botany Award for Outstanding Teaching in 2023.</p>
+      </article>
+      <article>
+        <h3>General Microbiology</h3>
+        <p class="entry-meta">Graduate teaching assistant · LSU · 2023–2024</p>
+        <p>I led laboratory sections and assessed student work in Fall 2023 and Spring and Fall 2024.</p>
+      </article>
+      <article>
+        <h3>Plant Physiology</h3>
+        <p class="entry-meta">Graduate teaching assistant · LSU · Fall 2020 &amp; 2021</p>
+        <p>I taught laboratory methods for measuring gas exchange, chlorophyll fluorescence, and photosynthetic performance.</p>
+      </article>
+      <article>
+        <h3>Vector Calculus</h3>
+        <p class="entry-meta">Course grader · University of Illinois Urbana-Champaign · 2015–2016</p>
+        <p>I graded coursework for MATH 241.</p>
+      </article>
     </div>
   </section>
 
+  <section class="section-row" aria-labelledby="mentoring-title">
+    <h2 class="section-label" id="mentoring-title">Mentoring</h2>
+    <div class="section-body">
+      <p>I have trained undergraduate researchers in qPCR, gas exchange, molecular cloning, and database scripting across the Vinyard, South, and Ort labs. At RIPE, I supervised five undergraduate assistants in molecular methods and greenhouse safety.</p>
+      <p>Through the Illinois Science &amp; Technology Coalition, I have advised high school researchers on experimental design and scientific writing since 2025.</p>
+    </div>
+  </section>
+
+  <section class="section-row" aria-labelledby="service-title">
+    <h2 class="section-label" id="service-title">Outreach</h2>
+    <div class="section-body">
+      <p>I have judged student research at LSU Discover Day and the Louisiana Regional Science &amp; Engineering Fair, and discussed photosynthesis and agriculture with audiences at Harvard Extension School and WEFT 90.1 FM.</p>
+      <p>I also represented graduate students on LSU’s biochemistry faculty search committee in 2023.</p>
+    </div>
+  </section>
+
+  <section class="section-row" id="contact" aria-labelledby="contact-title">
+    <h2 class="section-label" id="contact-title">Contact</h2>
+    <div class="section-body">
+      <p>For research, teaching, or collaboration, reach me at <a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a>.</p>
+      <a class="inline-link" href="https://github.com/nickyferrari">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap foot-row">
     <span>© 2026 Nicholas Ferrari</span>
-    <span><a href="mailto:nickferrari95@gmail.com">nickferrari95@gmail.com</a></span>
-    <span>Hand-built with plain HTML · <a href="https://github.com/nickyferrari/nickyferrari.github.io">source</a></span>
+    <div class="footer-links"><a href="mailto:nickferrari95@gmail.com">Email</a><a href="https://github.com/nickyferrari">GitHub</a><a href="cv.html">CV</a></div>
   </div>
 </footer>
 
