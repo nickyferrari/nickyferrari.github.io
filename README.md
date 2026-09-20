@@ -90,8 +90,43 @@ References: [MinutePhysics](https://www.youtube.com/watch?v=-eqdj63nEr4) and
 
 ## Publishing
 
-These changes are local until pushed to GitHub. Publishing requires a GitHub
-session or Git credentials with write access to the source repository. Review
-the draft, commit the changes on the redesign branch, and merge through the
-repository’s normal workflow. Confirm the branch configured under GitHub Pages
-before merging. No hosting migration is required.
+GitHub Pages publishes this site automatically from the root of the `main`
+branch. A commit saves a version of your files; committing to `main` also starts
+publication. Changes made only on your computer are not live until pushed there.
+
+### Make a small text change in your browser
+
+1. Sign in to GitHub and open
+   [the homepage source](https://github.com/nickyferrari/nickyferrari.github.io/blob/main/index.html).
+2. Click the pencil icon to edit. Use Ctrl+F to find the words you want to change.
+3. Edit the text between the HTML tags, leaving the surrounding tags in place.
+   For example, `<p class="intro-summary">Your introduction here.</p>` is the
+   paragraph beneath your name and tagline. `<h1>` is the main heading;
+   `<p>` is a paragraph; `class` connects an element to its styling.
+4. To remove a whole paragraph, remove its opening tag, text, and closing tag.
+   This is how the former `<p class="eyebrow">…</p>` line above the name was removed.
+   Removing an element here does not require deleting its shared CSS class.
+5. Review the changes, click **Commit changes**, write a short message such as
+   “Update homepage introduction,” and choose to commit directly to `main`.
+6. Check [Actions](https://github.com/nickyferrari/nickyferrari.github.io/actions)
+   for the Pages deployment to finish, then visit the live site. GitHub says
+   publication can take up to 10 minutes. If old text remains, use Ctrl+F5 to
+   refresh the page.
+
+For a substantial introduction change, also update the text inside `content="…"`
+on the `<meta name="description">` line near the top. That is the page summary
+search engines may use; it is not displayed on the page itself.
+
+The Pages list above maps the rest of the site to its files. HTML contains the
+content, `assets/css/style.css` controls the appearance, and `assets/js/` contains
+interactive behavior. Plain text edits do not require JavaScript changes.
+
+To undo a text edit, open the file's **History**, view the earlier version, and
+copy the desired text back into the current file. Commit that correction normally;
+the history preserves both versions.
+
+If you later work on a local copy, fetch and incorporate changes made on GitHub
+before editing, so the two copies stay in sync.
+
+GitHub documentation: [Editing files](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
+and [Pages publishing](https://docs.github.com/en/pages/quickstart).
