@@ -22,6 +22,7 @@ local working files and server logs only.
 ## Pages
 
 - `index.html`: introduction, photos, background, research summaries, and links to experiments.
+- `depi.html`: current postdoctoral work on the DEPI imaging chambers.
 - `publications.html`: papers, work in preparation, and conference presentations.
 - `cv.html`: education, experience, teaching, service, methods, and coursework.
 - `teaching.html`: courses, mentoring, outreach, and contact.
