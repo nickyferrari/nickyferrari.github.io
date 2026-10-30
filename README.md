@@ -53,9 +53,10 @@ local files.
 
 The homepage shows five photos from `assets/photos/`. The Ort lab group photo
 sits beside the introduction. The other four appear as square thumbnails in
-the About section, and the stylesheet crops each one to a square around its
-center. Each photo has `alt` text for screen readers and a short caption in
-`<figcaption>`.
+the About section. The stylesheet crops each one to a square around its center,
+unless the image sets `object-position` (the incubator photo uses
+`style="object-position: 75% 50%"` to keep the cultures in view). Each photo
+has `alt` text for screen readers and a short caption in `<figcaption>`.
 
 To swap a photo, upload the new file to `assets/photos/` and update the `src`,
 `width`, `height`, `alt`, and caption in `index.html`. Keep files under about
