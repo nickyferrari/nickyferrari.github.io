@@ -53,10 +53,10 @@
     var out = [];
     if (v === 'raw' || v === 'all') out.push({ key: 'raw', name: 'Raw flash yield (what the instrument records)', color: c.s[0], data: model.raw });
     if (v === 'split' || v === 'all') {
-      out.push({ key: 'donor', name: 'Donor side — S-state cycle (period 4)', color: c.s[1], data: model.donor });
-      out.push({ key: 'acceptor', name: 'Acceptor side — semiquinone (period 2)', color: c.s[2], data: model.acceptor });
+      out.push({ key: 'donor', name: 'Donor side: S-state cycle (period 4)', color: c.s[1], data: model.donor });
+      out.push({ key: 'acceptor', name: 'Acceptor side: semiquinone (period 2)', color: c.s[2], data: model.acceptor });
     }
-    if (v === 'donor') out.push({ key: 'donor', name: 'Donor side — S-state cycle (period 4)', color: c.s[1], data: model.donor });
+    if (v === 'donor') out.push({ key: 'donor', name: 'Donor side: S-state cycle (period 4)', color: c.s[1], data: model.donor });
     return out;
   }
 
@@ -156,7 +156,7 @@
     var shown = seriesShown();
     var html = '<b>flash ' + (idx + 1) + '</b>';
     shown.forEach(function (s) {
-      html += '<span class="tk">' + s.name.split('—')[0].trim() + '</span> <span class="tv">' +
+      html += '<span class="tk">' + s.name.split(':')[0].trim() + '</span> <span class="tv">' +
         s.data[idx].toFixed(3) + '</span><br>';
     });
     tip.innerHTML = html;

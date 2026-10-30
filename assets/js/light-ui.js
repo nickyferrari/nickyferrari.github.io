@@ -52,7 +52,7 @@
     document.getElementById('st-tv').innerHTML =
       fmt(s.tvS / 1000, 1) + 'k <small>/</small> ' + fmt(s.tvP / 1000, 1) + 'k';
     document.getElementById('st-match').textContent =
-      s.tvS > 0 ? fmt(100 * s.tvP / s.tvS, 1) + '%' : '—';
+      s.tvS > 0 ? fmt(100 * s.tvP / s.tvS, 1) + '%' : 'n/a';
     document.getElementById('st-flips').textContent = data.transitions;
     document.getElementById('st-expected').textContent = fmt(s.tvExpected / 1000, 1) + 'k';
 
@@ -99,8 +99,8 @@
     if (hoverIdx >= 0) plot.crosshair(hoverIdx * DT / 3600);
 
     Plot.legend(els.legend, [
-      { name: 'Stochastic — redrawn from N(µ, σ²)', color: c.s[0] },
-      { name: 'Periodic — square wave, TV-matched', color: c.s[1] },
+      { name: 'Stochastic, redrawn from N(µ, σ²)', color: c.s[0] },
+      { name: 'Periodic square wave, TV-matched', color: c.s[1] },
       { name: 'Mean irradiance', color: c.faint }
     ]);
   }

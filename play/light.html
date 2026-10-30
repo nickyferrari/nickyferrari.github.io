@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Light environments — Nicholas Ferrari</title>
+<title>Light environments · Nicholas Ferrari</title>
 <meta name="description" content="Interactive demo: matching the Total Variation of a periodic square-wave light environment to a stochastic one, so temporal pattern can be separated from photon dose.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,7 @@
     <a class="brand" href="../index.html">Nicholas Ferrari</a>
     <div class="nav-links">
       <a href="../index.html">About</a>
+      <a href="../depi.html">DEPI</a>
       <a href="../publications.html">Publications</a>
       <a href="../cv.html">CV</a>
       <a href="../teaching.html">Teaching</a>
@@ -33,7 +34,7 @@
 
   <div class="page-head">
     <h1>Light environments</h1>
-    <p class="lede">Compare a stochastic light sequence with a periodic square wave. Adjust intensity and variability to explore an experimental design for studying responses to unpredictable light.</p>
+    <p class="lede">Compare a stochastic light sequence with a periodic square wave. Adjust intensity and variability to design matched light conditions for an experiment on unpredictable light.</p>
   </div>
 
   <div class="demo">
@@ -79,7 +80,7 @@
         <p class="eq">TV = Σ |I(t+1) − I(t)|
 E[TV] = (n−1) · 2σ/√π
 k transitions = TV / 2A</p>
-        <p class="small faint">Total variation (TV) sums the absolute changes in intensity. The periodic sequence targets the stochastic sequence’s TV; the match is approximate because transitions occur at discrete time steps.</p>
+        <p class="small faint">Total variation (TV) sums the absolute changes in intensity. The periodic sequence targets the stochastic sequence’s TV. The match is approximate because transitions occur at discrete time steps.</p>
       </fieldset>
     </aside>
 
@@ -89,12 +90,12 @@ k transitions = TV / 2A</p>
       <div class="legend" id="e-legend"></div>
 
       <div class="stat-row">
-        <div class="stat"><span class="k">mean irradiance</span><span class="v" id="st-mean">—</span></div>
-        <div class="stat"><span class="k">photon dose <small>mmol m⁻²</small></span><span class="v" id="st-dose">—</span></div>
-        <div class="stat"><span class="k">total variation</span><span class="v" id="st-tv">—</span></div>
-        <div class="stat match"><span class="k">TV match</span><span class="v" id="st-match">—</span></div>
-        <div class="stat"><span class="k">square-wave flips</span><span class="v" id="st-flips">—</span></div>
-        <div class="stat"><span class="k">E[TV] predicted</span><span class="v" id="st-expected">—</span></div>
+        <div class="stat"><span class="k">mean irradiance</span><span class="v" id="st-mean">…</span></div>
+        <div class="stat"><span class="k">photon dose <small>mmol m⁻²</small></span><span class="v" id="st-dose">…</span></div>
+        <div class="stat"><span class="k">total variation</span><span class="v" id="st-tv">…</span></div>
+        <div class="stat match"><span class="k">TV match</span><span class="v" id="st-match">…</span></div>
+        <div class="stat"><span class="k">square-wave flips</span><span class="v" id="st-flips">…</span></div>
+        <div class="stat"><span class="k">E[TV] predicted</span><span class="v" id="st-expected">…</span></div>
       </div>
       <p class="small faint" style="margin-top:8px">Each statistic reads <span style="color:var(--series-1)">stochastic</span> / <span style="color:var(--series-2)">periodic</span>.</p>
 

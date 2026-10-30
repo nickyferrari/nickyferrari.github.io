@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Penrose tiling explorer — Nicholas Ferrari</title>
-<meta name="description" content="Explore Penrose and multigrid tilings with 5 to 17 directions. Trace ribbons between the grid and tiles, shift the pattern, and export your design.">
+<title>Penrose and multigrid tilings · Nicholas Ferrari</title>
+<meta name="description" content="Draw Penrose and multigrid tilings with 5 to 17 directions. Trace ribbons between the grid and tiles, shift the pattern, and export your design.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,7 @@
     <a class="brand" href="../index.html">Nicholas Ferrari</a>
     <div class="nav-links">
       <a href="../index.html">About</a>
+      <a href="../depi.html">DEPI</a>
       <a href="../publications.html">Publications</a>
       <a href="../cv.html">CV</a>
       <a href="../teaching.html">Teaching</a>
@@ -32,8 +33,8 @@
 <main class="wrap-wide penrose-page" id="main">
   <div class="page-head">
     <a class="inline-link" href="index.html">← All interactives</a>
-    <h1>Penrose, and beyond.</h1>
-    <p class="lede">A tiling is hiding in these lines. Follow one through the pattern, then change the number of directions to see what else appears.</p>
+    <h1>Penrose and multigrid tilings</h1>
+    <p class="lede">The tiling is built from a grid of intersecting lines. Follow one line through both views, then change the number of directions to get more tile shapes.</p>
   </div>
 
   <div class="tiling-controls" aria-label="Pattern controls">
@@ -66,14 +67,14 @@
   <div class="penrose-views" id="p-views" data-view="both">
     <figure class="tiling-figure" id="p-tile-figure">
       <figcaption><span id="p-tiling-title">The Penrose tiling</span><span class="small muted" id="p-tiles">…</span></figcaption>
-      <canvas id="penrose-canvas" width="1200" height="1000" tabindex="0" aria-label="Rhombus tiling. Hover or tap a tile to highlight a ribbon. Arrow keys select a ribbon; Shift and arrow keys change direction." aria-describedby="p-help"></canvas>
+      <canvas id="penrose-canvas" width="1200" height="1000" tabindex="0" aria-label="Rhombus tiling. Hover or tap a tile to highlight a ribbon. Arrow keys select a ribbon. Shift and arrow keys change direction." aria-describedby="p-help"></canvas>
     </figure>
     <figure class="tiling-figure" id="p-grid-figure">
       <figcaption><span id="p-grid-title">The pentagrid</span><span class="small muted" id="p-lines">…</span></figcaption>
-      <canvas id="pentagrid-canvas" width="1200" height="1000" tabindex="0" aria-label="Intersecting line families. Hover or tap a line to highlight its ribbon in the tiling. Arrow keys select a ribbon; Shift and arrow keys change direction." aria-describedby="p-help"></canvas>
+      <canvas id="pentagrid-canvas" width="1200" height="1000" tabindex="0" aria-label="Intersecting line families. Hover or tap a line to highlight its ribbon in the tiling. Arrow keys select a ribbon. Shift and arrow keys change direction." aria-describedby="p-help"></canvas>
     </figure>
   </div>
-  <noscript><p>Enable JavaScript to generate and explore these tilings.</p></noscript>
+  <noscript><p>Enable JavaScript to generate these tilings.</p></noscript>
   <p id="p-error" class="tiling-error" role="alert" hidden></p>
 
   <div class="ribbon-controls" aria-label="Ribbon selection">
@@ -97,11 +98,11 @@
   </details>
 
   <section class="tiling-explanation" aria-label="How the pattern works">
-    <article><h2>From lines to tiles</h2><p>Every crossing in the grid creates a rhombus. Its two edge directions come from the two line families that cross there. Follow a line and its tiles join into a winding ribbon.</p></article>
-    <article><h2>Order without repetition</h2><p>In a Penrose tiling, thick and thin tiles occur in proportions that approach the golden ratio. Small patches recur, but no translation makes the entire infinite tiling coincide with itself.</p><p class="ratio-readout" id="p-ratio">…</p></article>
-    <article><h2>Beyond five directions</h2><p>Five directions produce the two Penrose rhombi. More directions introduce more tile shapes. The pattern-shift control slides the line families relative to each other, changing how the tiles meet.</p></article>
+    <article><h2>How the grid makes the tiles</h2><p>Every crossing in the grid creates a rhombus. Its two edge directions come from the two line families that cross there. Follow a line and its tiles join into a winding ribbon.</p></article>
+    <article><h2>A tiling that never repeats</h2><p>In a Penrose tiling, thick and thin tiles occur in proportions that approach the golden ratio. Small patches recur, but no translation makes the entire infinite tiling coincide with itself.</p><p class="ratio-readout" id="p-ratio">…</p></article>
+    <article><h2>More than five directions</h2><p>Five directions produce the two Penrose rhombi. More directions introduce more tile shapes. The pattern-shift control slides the line families relative to each other, changing how the tiles meet.</p></article>
   </section>
-  <p class="small muted tiling-sources">Inspired by <a href="https://www.youtube.com/watch?v=-eqdj63nEr4">MinutePhysics: Why Penrose Tiles Never Repeat</a>. Based on <a href="https://www.math.utah.edu/~treiberg/PenroseSlides.pdf">de Bruijn’s multigrid construction</a>. These are finite patches; counts near the boundary depend on the patch size.</p>
+  <p class="small muted tiling-sources">Inspired by <a href="https://www.youtube.com/watch?v=-eqdj63nEr4">MinutePhysics: Why Penrose Tiles Never Repeat</a>. Based on <a href="https://www.math.utah.edu/~treiberg/PenroseSlides.pdf">de Bruijn’s multigrid construction</a>. These are finite patches. Counts near the boundary depend on the patch size.</p>
 </main>
 
 <footer class="site-foot">

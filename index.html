@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nicholas Ferrari — Quantitative Plant Biologist</title>
-<meta name="description" content="Nicholas Ferrari explores photosynthesis, how living things process information, and the mathematics of biological systems and networks.">
+<title>Nicholas Ferrari · Quantitative Plant Biologist</title>
+<meta name="description" content="Nicholas Ferrari is a postdoctoral researcher at the MSU-DOE Plant Research Laboratory. He studies photosynthesis under changing light and uses mathematics to describe biological systems and networks.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,7 @@
     <a class="brand" href="index.html">Nicholas Ferrari</a>
     <div class="nav-links">
       <a href="index.html" aria-current="page">About</a>
+      <a href="depi.html">DEPI</a>
       <a href="publications.html">Publications</a>
       <a href="cv.html">CV</a>
       <a href="teaching.html">Teaching</a>
@@ -32,19 +33,46 @@
 <main class="wrap" id="main">
 <section class="intro" aria-labelledby="intro-title">
     <h1 id="intro-title">Nicholas Ferrari</h1>
-    <p class="intro-line">Photosynthesis, patterns,<br class="desktop-break"> and the tools to explore them.</p>
-    <p class="intro-summary">I’m a plant biologist interested in how living things respond to change and process information, and how mathematics can describe biological systems and networks. I study photosynthesis, build scientific instruments, and explore these ideas through code.</p>
-    <div class="text-links">
-      <a href="play/index.html">Explore the interactives <span aria-hidden="true">↗</span></a>
-      <a href="mailto:nickferrari95@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+    <div class="intro-grid">
+      <div class="intro-text">
+        <p class="intro-line">Postdoctoral researcher, MSU-DOE Plant Research Laboratory</p>
+        <p class="intro-summary">I study how photosynthesis responds to changing light. I am also interested in how mathematics can describe biological systems and networks. I build scientific instruments and write code for data analysis and modeling.</p>
+        <div class="text-links">
+          <a href="play/index.html">Try the interactive models <span aria-hidden="true">↗</span></a>
+          <a href="mailto:nickferrari95@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <figure class="intro-photo">
+        <img src="assets/photos/ort-lab-cornfield.jpg" width="1044" height="750" fetchpriority="high" alt="Seven members of the Ort lab smiling in a tall cornfield on a sunny day, most of them in wide-brimmed field hats.">
+        <figcaption>With the Ort lab at the University of Illinois</figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="section-row" id="about" aria-labelledby="about-title">
     <h2 class="section-label" id="about-title">About</h2>
     <div class="section-body">
+      <p>I am a postdoctoral researcher in Berkley Walker’s lab at the MSU-DOE Plant Research Laboratory at Michigan State University. I work on the software and analysis for the DEPI imaging chambers.</p>
       <p>I earned my Ph.D. in Biochemistry at Louisiana State University in 2026, with a minor in Mathematics. My research in David Vinyard’s lab asked how algae adjust when the light around them keeps changing.</p>
-      <p>Before that, I worked with the RIPE project at the University of Illinois Urbana-Champaign on ways to improve photosynthesis in crops. I’m drawn to questions that bring biology, mathematics, and hands-on experiments together.</p>
+      <p>Before that, I worked with the RIPE project at the University of Illinois Urbana-Champaign on ways to improve photosynthesis in crops. My work combines hands-on experiments on plants and algae with the mathematics used to design and interpret them.</p>
+      <div class="photo-strip">
+        <figure>
+          <img src="assets/photos/tobacco-field-trial.jpg" width="358" height="640" loading="lazy" decoding="async" alt="A researcher in a wide-brimmed hat kneels among young tobacco plants to take a measurement.">
+          <figcaption>Measuring tobacco in a field trial</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/potato-harvest.jpg" width="480" height="360" loading="lazy" decoding="async" alt="Freshly dug potatoes in loose soil, with two boots at the top of the frame.">
+          <figcaption>Potato harvest from a field trial</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/algae-incubator.jpg" width="480" height="360" loading="lazy" decoding="async" style="object-position: 75% 50%" alt="Two flasks of green algae culture inside an incubator, with wired electronics on the shelf above them.">
+          <figcaption>Algae cultures in an incubator at LSU</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/arduino-breadboard.jpg" width="600" height="800" loading="lazy" decoding="async" alt="An Arduino board wired to two breadboards and a microSD card module, held on a clipboard.">
+          <figcaption>An Arduino prototype on a clipboard</figcaption>
+        </figure>
+      </div>
       <a class="inline-link" href="cv.html">View my CV <span aria-hidden="true">↗</span></a>
     </div>
   </section>
@@ -52,6 +80,10 @@
   <section class="section-row" id="research" aria-labelledby="research-title">
     <h2 class="section-label" id="research-title">Research</h2>
     <div class="section-body research-list">
+      <article>
+        <h3>DEPI imaging chambers</h3>
+        <p>DEPI chambers image the photosynthesis of hundreds of plants under changing light. I work on the chamber software and analysis. With Chih-Li Sung’s group, we are adding experimental design to choose the light for each run based on the runs before it. Read more on the <a href="depi.html">DEPI page</a>.</p>
+      </article>
       <article>
         <h3>Photosynthesis under changing light</h3>
         <p>A regular flicker and a random one can deliver similar amounts of light. I study whether algae respond differently to the two patterns.</p>
@@ -62,16 +94,16 @@
       </article>
       <article>
         <h3>Tools for measuring biology</h3>
-        <p>Sometimes a question needs a new tool. I build programmable lights, optical hardware, and software for collecting and interpreting data.</p>
+        <p>I build tools for my own experiments, including programmable lights, optical hardware, and software for collecting and interpreting data.</p>
       </article>
       <a class="inline-link" href="publications.html">Read the publications <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 
   <section class="section-row" aria-labelledby="explore-title">
-    <h2 class="section-label" id="explore-title">Explore</h2>
+    <h2 class="section-label" id="explore-title">Interactive</h2>
     <div class="section-body">
-      <p>Change a light pattern, build a nonrepeating tiling, or see what simple rules can create in the Game of Life. These small browser experiments are another way to explore the ideas that interest me.</p>
+      <p>Change a light pattern, build a nonrepeating tiling, or run the Game of Life with different rules. The collection includes two models from my research and two mathematical patterns that interest me.</p>
       <a class="inline-link" href="play/index.html">Open the interactive collection <span aria-hidden="true">↗</span></a>
     </div>
   </section>
