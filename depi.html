@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DEPI chambers · Nicholas Ferrari</title>
-<meta name="description" content="Nicholas Ferrari’s postdoctoral work on the DEPI imaging chambers at the MSU-DOE Plant Research Laboratory: new control software, temperature programs, and experimental design that lets one run choose the next.">
+<meta name="description" content="Nicholas Ferrari’s postdoctoral work on the DEPI imaging chambers at the MSU-DOE Plant Research Laboratory: new control software, temperature programs, and experimental design for choosing the next light program.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,22 +33,22 @@
 <main class="wrap" id="main">
   <div class="page-head">
     <h1>DEPI chambers</h1>
-    <p class="lede">DEPI, the dynamic environmental photosynthesis imager, is a set of growth chambers that image the chlorophyll fluorescence of hundreds of plants many times a day, under light programs that can replay field conditions. DEPI was created in David Kramer’s lab at the MSU-DOE Plant Research Laboratory. Berkley Walker’s lab now runs it through C-PhLUX, the Center for Photosynthetic Light Use and Carbon Exchange, which is open to any MSU lab. I work on the DEPI software and analysis.</p>
+    <p class="lede">DEPI, the dynamic environmental photosynthesis imager, is a set of growth chambers. They image the chlorophyll fluorescence of hundreds of plants many times a day, under light programs that can replay field conditions. DEPI was created in David Kramer’s lab at the MSU-DOE Plant Research Laboratory. Berkley Walker’s lab now runs it through C-PhLUX, the Center for Photosynthetic Light Use and Carbon Exchange, which is open to any MSU lab. I work on the DEPI software and analysis.</p>
   </div>
 
   <section class="section-row" aria-labelledby="new-title">
     <h2 class="section-label" id="new-title">Recent work</h2>
     <div class="section-body">
       <h3>What is new on DEPI 01</h3>
-      <p>DEPI 01 is the first chamber to run the new control software. A run is now a plan of light, temperature, and image captures that the chamber checks against its limits, so a run can replay a heat wave as well as a sunny day. A web portal queues runs and returns readouts for each plant, and a color camera records a timelapse beside the fluorescence camera.</p>
+      <p>DEPI 01 is the first chamber to run the new control software. A run is now a plan of light, temperature, and image captures that the chamber checks against its limits. With temperature in the plan, a run can replay a heat wave as well as a sunny day. A web portal queues runs and returns readouts for each plant. A color camera records a timelapse beside the fluorescence camera.</p>
     </div>
   </section>
 
   <section class="section-row" aria-labelledby="design-title">
     <h2 class="section-label" id="design-title">Experimental design</h2>
     <div class="section-body">
-      <h3>Letting one run choose the next</h3>
-      <p>Some mutants look like wild type in constant light and only differ when the light changes. With Chih-Li Sung’s group in Statistics and Probability, we are building Bayesian experimental design into the chambers. Five days of light programs go in, and the model proposes the sixth, picking the program expected to separate a mutant from wild type the most.</p>
+      <h3>Choosing the next light program</h3>
+      <p>Some mutants look like wild type in constant light and only differ when the light changes. With Chih-Li Sung’s group in Statistics and Probability, we are building Bayesian experimental design into the chambers. Five days of light programs go in, and the model proposes the sixth. It picks the program expected to best separate a mutant from wild type.</p>
       <p>If you have a mutant whose phenotype hides in constant light, or a project that could use DEPI, <a href="mailto:nickferrari95@gmail.com">email me</a>.</p>
     </div>
   </section>
