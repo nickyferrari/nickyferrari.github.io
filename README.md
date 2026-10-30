@@ -21,7 +21,7 @@ local working files and server logs only.
 
 ## Pages
 
-- `index.html`: introduction, background, research summaries, and links to experiments.
+- `index.html`: introduction, photos, background, research summaries, and links to experiments.
 - `publications.html`: papers, work in preparation, and conference presentations.
 - `cv.html`: education, experience, teaching, service, methods, and coursework.
 - `teaching.html`: courses, mentoring, outreach, and contact.
@@ -46,8 +46,22 @@ and research record. Before publishing, confirm:
 4. Any personal interests or projects to add beyond the existing research and games.
 
 Generic Scholar, ORCID, and LinkedIn home-page links were removed. Add actual
-profile URLs when available. A portrait is optional; the new design does not
-require one. No private credentials are needed for editing the local files.
+profile URLs when available. No private credentials are needed for editing the
+local files.
+
+## Photos
+
+The homepage shows five photos from `assets/photos/`. The Ort lab group photo
+sits beside the introduction. The other four appear as square thumbnails in
+the About section, and the stylesheet crops each one to a square around its
+center. Each photo has `alt` text for screen readers and a short caption in
+`<figcaption>`.
+
+To swap a photo, upload the new file to `assets/photos/` and update the `src`,
+`width`, `height`, `alt`, and caption in `index.html`. Keep files under about
+1,200 pixels wide. Phone photos often store the location where they were taken,
+so remove that metadata before uploading. The current files were exported
+without any.
 
 The five paper links were checked against Crossref’s publisher-deposited records:
 
