@@ -91,6 +91,8 @@ section { padding-block: 32px; }
 .section-row > .section-label { padding-top: 5px; }
 .section-body > :last-child { margin-bottom: 0; }
 .section-body p { color: var(--ink-soft); }
+/* Long code strings such as URLs wrap on phones. "break-word" is not enough: only "anywhere" lets the one-column grid shrink. */
+.section-body code { overflow-wrap: anywhere; }
 .research-list article + article, .course-list article + article { margin-top: 25px; }
 .research-list p { margin-bottom: 0; }
 .research-list > .inline-link { display: inline-block; margin-top: 24px; }
